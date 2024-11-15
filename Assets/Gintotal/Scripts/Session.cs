@@ -3,13 +3,21 @@ using UnityEngine.Playables;
 
 public class Session : MonoBehaviour
 {
+    public Transform startPoint;
     public string text = "시작과 관련된 \n텍스트를 적습니다.\n세줄까지 정렬 가능합니다.";
     public bool isAnim = true;
     public bool isPopup = true;
-    public bool isCamPose = true;
+    public bool isStartPosition = true;
     public bool isPause = true;
     public bool isInteractable = true;
     public bool isDone = true;
+
+    public void SetStartingPosition()
+    {
+        if (!isStartPosition) return;
+        var transform1 = transform;
+        SessionManager.Instance.playerOrigin.SetPositionAndRotation(transform1.position, transform1.rotation);
+    }
 
     public void GetDirector()
     {

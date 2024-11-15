@@ -6,17 +6,15 @@ using UnityEngine.Playables;
 public class SessionManager : MonoBehaviour
 {
     private static SessionManager _instance;
-
     [SerializeField] public GameObject intro;
     [SerializeField] public GameObject[] sessions;
     [SerializeField] public GameObject accident;
     [SerializeField] public GameObject quiz;
-    [SerializeField] public CanvasGroup cameraFade;
-    [SerializeField] public Transform camPosition;
     [SerializeField] public GameObject interaction;
     [SerializeField] public TMP_Text noticeText;
     [SerializeField] public TMP_Text popupText;
     
+    public Transform playerOrigin;
     public PlayableDirector playableDirector;
     public int currentSessionID;
     
@@ -150,6 +148,7 @@ public class SessionManager : MonoBehaviour
 
     private void ProcessingSession()
     {
+        _session.SetStartingPosition();
         interaction.SetActive(_session.isInteractable);
         _session.GetDirector();
         

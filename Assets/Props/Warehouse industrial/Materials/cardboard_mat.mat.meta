@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 42e9a77f7310bb24c996b07be92e90f3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 285176
+  packageName: Industrial Warehouse Pack
+  packageVersion: 1.0
+  assetPath: Assets/Quad.Vertex/Warehouse industrial/Materials/cardboard_mat.mat
+  uploadId: 665523
