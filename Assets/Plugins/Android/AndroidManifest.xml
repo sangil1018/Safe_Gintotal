@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.unity3d.player"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <activity android:name="com.unity3d.player.UnityPlayerActivity"
+                  android:theme="@style/UnityThemeSelector"
+                  android:exported="true"> // 필요한 내용
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    </application>
+
+<!--    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> // 모든 앱 실행가능-->
+<!--    <queries>-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+<!--        </intent>-->
+<!--    </queries>-->
+    <queries> // 실행할 앱번들 이름 추가
+        실행할 개별 앱 추가
+        <package android:name="com.test.home" />
+        <package android:name="com.test.app1" />
+        <package android:name="com.test.app2" />
+    </queries>
+
+</manifest>
