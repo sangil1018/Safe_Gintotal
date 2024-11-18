@@ -10,6 +10,7 @@ public class Session : MonoBehaviour
     public bool isStartPosition = true;
     public bool isExp = true;
     public bool isDone = true;
+    public bool notice;
 
     public void SetStartingPosition()
     {

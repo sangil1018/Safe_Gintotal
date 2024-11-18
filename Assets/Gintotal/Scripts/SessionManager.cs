@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,7 +18,7 @@ public class SessionManager : MonoBehaviour
     [SerializeField] public GameObject quizMenu;
 
     [SerializeField] public float startDelayTime = 2f;
-    [SerializeField] public float hidePopupTime = 5f;
+    [SerializeField] public float hidePopupTime = 10f;
 
     public Transform playerOrigin;
     public PlayableDirector playableDirector;
@@ -34,6 +35,9 @@ public class SessionManager : MonoBehaviour
     private ViveToHome _viveToHome;
     private bool _activeInteraction;
     private bool _isPaused;
+
+    public TMP_Text uiText;
+    public GameObject uiObj;
     
     private void Awake()
     {
@@ -99,9 +103,8 @@ public class SessionManager : MonoBehaviour
     public void IntroDone()
     {
         FadeBlack();
-        ShowSession();
-        
         intro.SetActive(false);
+        ShowSession();
     }
 
     private void ShowSession()
@@ -170,9 +173,12 @@ public class SessionManager : MonoBehaviour
 
     private void ProcessingSession()
     {
+        uiText = _session.notice ? noticeText : popupText;
+        uiObj = _session.notice ? _notice : _popup;
+        
         _activeInteraction = !(_session.isAnim || _session.isPopup);
         _session.SetStartingPosition();
-        noticeText.text = _session.text;
+        uiText.text = _session.text;
         if (_session.isAnim)
         {
             _session.GetDirector();
@@ -184,37 +190,43 @@ public class SessionManager : MonoBehaviour
         
         if (_session.isPopup)
         {
-            _notice.SetActive(true);
+            uiObj.SetActive(true);
             if (_audioSource.clip != null) hidePopupTime = _audioSource.clip.length;
             
             Invoke(nameof(HidePopUp), hidePopupTime);
+            // StartCoroutine(HidePopUp());
         }
         else
         {
             if (_session.isAnim && _session.startAnim)
             {
                 Invoke(nameof(PlayAnimation), startDelayTime);
+                // StartCoroutine(PlayAnim());
             }
         }
     }
 
     private void HidePopUp()
     {
-        _notice.SetActive(false);
+        // yield return new WaitForSeconds(hidePopupTime);
+        
+        uiObj.SetActive(false);
         
         if (_session.isAnim && _session.startAnim)
         {
             Invoke(nameof(PlayAnimation), startDelayTime);
+            // StartCoroutine(PlayAnim());
         }
         else
         {
             switch (_session.gameObject.name)
             {
                 case "Intro":
-                    _popup.SetActive(true);
+                    IntroDone();
                     break;
                 case "Accident":
                     Invoke(nameof(ShowQuiz), startDelayTime);
+                    // ShowQuiz();
                     break;
                 default:
                     // 인터렉션 활성화
@@ -222,6 +234,13 @@ public class SessionManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private IEnumerator PlayAnim()
+    {
+        yield return new WaitForSeconds(startDelayTime);
+
+        PlayAnimation();
     }
 
     public void PlayAnimation() => playableDirector.Play();
