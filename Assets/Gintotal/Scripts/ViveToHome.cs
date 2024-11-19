@@ -16,15 +16,27 @@ public class ViveToHome : MonoBehaviour
     
     // [SerializeField] public Button toHomeBtn;
     private CanvasGroup _canvasGroup;
+    private CanvasGroup _accidentGroup;
     private const string SceneName = "home";
+
+    private Sequence _mySequence;
     
     private void Awake()
     {
         _canvasGroup = GameObject.Find("OverlayFader").GetComponent<CanvasGroup>();
+        _accidentGroup = GameObject.Find("AccidentFader").GetComponent<CanvasGroup>();
         _canvasGroup.alpha = 1;
+        _accidentGroup.alpha = 0;
     }
-    
+
     private void Start() => runInBackground = true;
+
+    public void AccidentFaderSequence()
+    {
+        _mySequence = DOTween.Sequence()
+            .OnStart(() => { _accidentGroup.DOFade(0, 1f).SetEase(Ease.InCubic); })
+            .Append(_canvasGroup.DOFade(1, 3f).SetEase(Ease.InCubic));
+    }
 
     public void CameraToWhite()
     {

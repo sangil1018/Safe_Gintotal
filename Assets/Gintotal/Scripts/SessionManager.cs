@@ -12,7 +12,7 @@ public class SessionManager : MonoBehaviour
     [SerializeField] public GameObject accident;
     [SerializeField] public GameObject quiz;
     [SerializeField] public GameObject ending;
-    [SerializeField] public GameObject interaction;
+    public GameObject interaction;
     [SerializeField] public TMP_Text noticeText;
     [SerializeField] public TMP_Text popupText;
     [SerializeField] public GameObject quizMenu;
@@ -33,8 +33,9 @@ public class SessionManager : MonoBehaviour
     private AudioSource _audioSource;
     private QuestToHome _questToHome;
     private ViveToHome _viveToHome;
-    private bool _activeInteraction;
+    public bool _activeInteraction;
     private bool _isPaused;
+    private QuizSet _quizSet;
 
     public TMP_Text uiText;
     public GameObject uiObj;
@@ -57,6 +58,8 @@ public class SessionManager : MonoBehaviour
         _notice.SetActive(false);
         _popup = popupText.transform.parent.parent.parent.parent.gameObject;
         _popup.SetActive(false);
+
+        _quizSet = quiz.GetComponent<QuizSet>();
         
 #if UNITY_ANDROID
         _questToHome = _uiManager.GetComponent<QuestToHome>();
@@ -149,7 +152,7 @@ public class SessionManager : MonoBehaviour
         quiz.SetActive(true);
         _session = quiz.GetComponent<Session>();
         quizMenu.SetActive(true);
-        
+        _quizSet.InitialQuiz();
         ProcessingSession();
     }
     
@@ -182,7 +185,7 @@ public class SessionManager : MonoBehaviour
         if (_session.isAnim)
         {
             _session.GetDirector();
-            playableDirector.stopped += OnPlayableDirectorStopped;
+            // playableDirector.stopped += OnPlayableDirectorStopped;
         }
         _audioSource = _session.GetComponent<AudioSource>();
 
@@ -215,6 +218,7 @@ public class SessionManager : MonoBehaviour
         if (_session.isAnim && _session.startAnim)
         {
             Invoke(nameof(PlayAnimation), startDelayTime);
+            _activeInteraction = true;
             // StartCoroutine(PlayAnim());
         }
         else
@@ -226,7 +230,10 @@ public class SessionManager : MonoBehaviour
                     break;
                 case "Accident":
                     Invoke(nameof(ShowQuiz), startDelayTime);
-                    // ShowQuiz();
+                    AccidentDone();
+                    break;
+                case "Ending":
+                    FadeBlack();
                     break;
                 default:
                     // 인터렉션 활성화
@@ -292,6 +299,15 @@ public class SessionManager : MonoBehaviour
         _questToHome.CameraToBlack();
 #else
         _viveToHome.CameraToBlack();
+#endif
+    }
+
+    public void AccidentHappen()
+    {
+#if UNITY_ANDROID
+        _questToHome.AccidentFaderSequence();
+#else
+        _viveToHome.AccidentFaderSequence();
 #endif
     }
 }
