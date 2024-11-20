@@ -31,7 +31,7 @@ public class ViveToHome : MonoBehaviour
 
     private void Start() => runInBackground = true;
 
-    public void AccidentFaderSequence()
+    public void FaderSequence()
     {
         _mySequence = DOTween.Sequence()
             .OnStart(() => { _accidentGroup.DOFade(0, 1f).SetEase(Ease.InCubic); })

@@ -9,12 +9,6 @@ public class QuizSet : MonoBehaviour
 
     private int _count;
 
-    private void Awake()
-    {
-        // _count = SessionManager.Instance.answerCorrect;
-        // quizMain.SetActive(false);
-    }
-
     public void InitialQuiz()
     {
         foreach (var hide in hideObjs)
@@ -35,7 +29,7 @@ public class QuizSet : MonoBehaviour
 
         if (_count == SessionManager.Instance.MAXCount)
         {
-            Invoke(nameof(GoToEnding), 2f);
+            Invoke(nameof(GoToEnding), 5f);
         }
     }
 
