@@ -6,17 +6,11 @@ public class ExpUIManager : MonoBehaviour
 {
     [SerializeField] public Button backBtn;
 
-    private GameObject _backBtnUI;
     private ViveToHome _viveToHome;
     private QuestToHome _questToHome;
     private bool _vShow;
 
-    public void OnMenu(InputAction.CallbackContext context) => _vShow = !_vShow;
-
-    private void Awake()
-    {
-        _backBtnUI = backBtn.transform.parent.parent.gameObject;
-    }
+    public void OnMenu(InputAction.CallbackContext context) => SessionManager.Instance.ShowBackUI(_vShow = !_vShow);
 
     private void Start()
     {
@@ -27,13 +21,6 @@ public class ExpUIManager : MonoBehaviour
         _viveToHome = GetComponent<ViveToHome>();
         backBtn.onClick.AddListener(_viveToHome.BackButtonToHome);
 #endif
-        
-        _backBtnUI.SetActive(false);
-    }
-
-    private void Update()
-    {
-        _backBtnUI.SetActive(_vShow);
     }
 
     public void ShowBackButton()
@@ -46,5 +33,7 @@ public class ExpUIManager : MonoBehaviour
     private void AutoGoHome()
     {
         backBtn.onClick.Invoke();
+        
+        _vShow = false;
     }
 }

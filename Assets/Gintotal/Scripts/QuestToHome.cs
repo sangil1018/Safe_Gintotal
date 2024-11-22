@@ -29,7 +29,7 @@ public class QuestToHome : MonoBehaviour
     
     private void Start() => runInBackground = true;
     
-    public void AccidentFaderSequence()
+    public void FaderSequence()
     {
         _mySequence = DOTween.Sequence()
             .OnStart(() => { _accidentGroup.DOFade(0, 1f).SetEase(Ease.InCubic); })
@@ -62,8 +62,8 @@ public class QuestToHome : MonoBehaviour
             Debug.LogError($"{SceneName} 씬을 찾을 수 없습니다." + e.Message);
         }
 #else // 안드로이드 일때
-        var apkName = $"com.mc.{SceneName}";
-        LaunchAndroidApp(apkName);
+        var apkName = $"com.gintotal.mc.{SceneName}";
+        LaunchAndroidApp(apkName.ToLower());
 #endif
     }
     

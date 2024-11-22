@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class AppLauncher : MonoBehaviour
 {
-    private const string WindowsDirPath = @"C:\Gintotal\mc"; // 윈도우 exe 경로
+    private const string WindowsDirPath = @"C:\Gintotal\Vive"; // 윈도우 exe 경로
     private const float QuitDelay = 2.0f; // 종료 대기 시간
     private bool _isAppLaunched;
     
@@ -43,14 +43,14 @@ public class AppLauncher : MonoBehaviour
 
         foreach (var btn in allButtons)
         {
-            var btnName = btn.transform.parent.name; // 버튼 이름을 소문자로 변환하여 비교
+            var btnName = btn.transform.parent.name.ToLower(); // 버튼 이름을 소문자로 변환하여 비교
 
-            if (btnName.Contains("Exp"))
+            if (btnName.Contains("exp"))
             {
                 expList.Add(btn);
                 btn.onClick.AddListener(() => LaunchApp(btnName));
             }
-            else if (btnName.Contains("Viz"))
+            else if (btnName.Contains("viz"))
             {
                 vizList.Add(btn);
                 btn.onClick.AddListener(() => LaunchApp(btnName));
@@ -111,19 +111,19 @@ public class AppLauncher : MonoBehaviour
         
         // if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android)
         // {
-        //     var apkName = $"com.mc.{sceneName}";
+        //     var apkName = $"com.gintotal.mc.{sceneName}";
         //     LaunchAndroidApp(apkName);
         // }
         // else
         // {
-        //     var exePath = @$"{WindowsDirPath}\{sceneName}\{sceneName}.exe";
+        //     var exePath = @$"C:\Gintotal\Vive\{sceneName}\{sceneName}.exe";
         //     LaunchWindowsApp(exePath);
         // }
 #elif UNITY_ANDROID // 안드로이드 일때
         var apkName = $"com.mc.{sceneName}";
         LaunchAndroidApp(apkName);
 #else // 윈도우 일때
-        var exePath = @$"{windowsDirPath}\{sceneName}\{sceneName}.exe";
+        var exePath = @$"C:\Gintotal\Vive\{sceneName}\{sceneName}.exe";
         LaunchWindowsApp(exePath);
 #endif
     }

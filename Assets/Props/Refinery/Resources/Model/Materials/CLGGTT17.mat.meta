@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c69f888d7fe35da4881acdad925b7dc8
+timeCreated: 1541929201
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 132990
+  packageName: Refinery vol 3
+  packageVersion: 1.0
+  assetPath: Assets/Refinery/Resources/Model/Materials/CLGGTT17.mat
+  uploadId: 277970

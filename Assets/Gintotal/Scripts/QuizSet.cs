@@ -33,8 +33,5 @@ public class QuizSet : MonoBehaviour
         }
     }
 
-    private void GoToEnding()
-    {
-        SessionManager.Instance.QuizDone();
-    }
+    private void GoToEnding() => SessionManager.Instance.QuizDone();
 }

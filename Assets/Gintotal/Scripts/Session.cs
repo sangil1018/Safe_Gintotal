@@ -8,9 +8,7 @@ public class Session : MonoBehaviour
     public bool startAnim = true;
     public bool isPopup = true;
     public bool isStartPosition = true;
-    public bool isExp = true;
     public bool isDone = true;
-    public bool notice;
 
     public void SetStartingPosition()
     {
@@ -22,7 +20,6 @@ public class Session : MonoBehaviour
     public void GetDirector()
     {
         if (gameObject.name.Contains("Quiz")) return;
-        
         SessionManager.Instance.playableDirector = GetComponent<PlayableDirector>();
     }
 }

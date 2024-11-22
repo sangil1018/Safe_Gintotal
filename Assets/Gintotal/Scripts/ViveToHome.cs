@@ -64,7 +64,7 @@ public class ViveToHome : MonoBehaviour
             Debug.LogError($"{SceneName} 씬을 찾을 수 없습니다." + e.Message);
         }
 #else // 윈도우 일때
-        var exePath = @$"{windowsDirPath}\{SceneName}\{SceneName}.exe";
+        var exePath = @$"C:\Gintotal\Vive\{SceneName}\{SceneName}.exe";
         LaunchWindowsApp(exePath);
 #endif
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.NetworkInformation;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private GameObject startPopup;
     [SerializeField] private GameObject sessionPopup;
     [SerializeField] private GameObject accidentPopup;
+    [SerializeField] private GameObject backPopup;
     [SerializeField] private TMP_Text popupText;
     [SerializeField] private GameObject quizMenu;
     [SerializeField] private float startDelayTime = 2f;
@@ -30,6 +32,7 @@ public class SessionManager : MonoBehaviour
     public readonly int MAXCount = 3;
     
     private Session _session;
+    public Session GetSession => _session;
     public string GetSessionName => _session.gameObject.name;
     private GameObject _uiManager;
     private AudioSource _audioSource;
@@ -75,7 +78,7 @@ public class SessionManager : MonoBehaviour
 
     private void Update()
     {
-        interaction.SetActive(activeInteraction);
+        interaction.SetActive(activeInteraction && !introPopup.activeSelf && !startPopup.activeSelf && !sessionPopup.activeSelf && !accidentPopup.activeSelf && !backPopup.activeSelf);
     }
 
     private void FindChildSessions()
@@ -91,6 +94,8 @@ public class SessionManager : MonoBehaviour
         sessions = objs.ToArray();
         currentSessionID = 0;
     }
+
+    public void ShowBackUI(bool show) => backPopup.SetActive(show);
 
     private void ShowIntro()
     {
@@ -119,12 +124,12 @@ public class SessionManager : MonoBehaviour
     public void SessionDone()
     {
         FadeBlack();
-        currentSessionID++;
+        
+        sessions[currentSessionID].SetActive(false);
+        currentSessionID += 1;
         
         if (_session.isDone) ShowAccident();
         else ShowSession();
-        
-        sessions[currentSessionID-1].SetActive(false);
     }
 
     private void ShowAccident()
@@ -139,9 +144,8 @@ public class SessionManager : MonoBehaviour
     public void AccidentDone()
     {
         FadeBlack();
-        ShowQuiz();
-        
         accident.SetActive(false);
+        ShowQuiz();
     }
 
     private void ShowQuiz()
@@ -149,9 +153,12 @@ public class SessionManager : MonoBehaviour
         hidePopupTime = 5f;
         quiz.SetActive(true);
         _session = quiz.GetComponent<Session>();
-        quizMenu.SetActive(true);
-        _quizSet.InitialQuiz();
-        
+        if (!_session.isDone)
+        {
+            quizMenu.SetActive(true);
+            _quizSet.InitialQuiz();
+        }
+
         SetPopUp("Quiz");
         ProcessingSession();
     }
@@ -161,6 +168,7 @@ public class SessionManager : MonoBehaviour
         ShowEnding();
         
         quiz.SetActive(false);
+        quizMenu.SetActive(false);
     }
     
     private void ShowEnding()
@@ -179,7 +187,8 @@ public class SessionManager : MonoBehaviour
         
         if (_session.isAnim)
         {
-            _session.GetDirector();
+            playableDirector = _session.GetComponent<PlayableDirector>();
+            // _session.GetDirector();
             // playableDirector.stopped += OnPlayableDirectorStopped;
         }
         _audioSource = _session.GetComponent<AudioSource>();
@@ -188,7 +197,7 @@ public class SessionManager : MonoBehaviour
         
         if (_session.isPopup)
         {
-            Invoke(nameof(DelayPopUp), 2f);
+            Invoke(nameof(DelayPopUp), 1f);
             if (_audioSource.clip != null) hidePopupTime = _audioSource.clip.length;
             
             Invoke(nameof(HidePopUp), hidePopupTime);
@@ -199,6 +208,28 @@ public class SessionManager : MonoBehaviour
             {
                 Invoke(nameof(PlayAnimation), startDelayTime);
             }
+            else
+            {
+                if (!_session.isDone) return;
+                switch (_session.gameObject.name.ToLower())
+                {
+                    case "intro":
+                        IntroDone();
+                        break;
+                    case "accident":
+                        AccidentDone();
+                        break;
+                    case "quiz":
+                        QuizDone();
+                        break;
+                    case "ending":
+                        StartCoroutine(EndingProcess());
+                        break;
+                    default:
+                        SessionDone();
+                        break;
+                }
+            }
         }
     }
 
@@ -206,31 +237,31 @@ public class SessionManager : MonoBehaviour
 
     private void SetPopUp(string sessionName = "Session")
     {
-        switch (sessionName)
+        switch (sessionName.ToLower())
         {
-            case "Intro":
-                introPopup.SetActive(true);
+            case "intro":
+                introPopup.SetActive(_session.isPopup);
                 sessionPopup.SetActive(false);
                 accidentPopup.SetActive(false);
                 popup = introPopup;
                 break;
-            case "Accident":
+            case "accident":
                 introPopup.SetActive(false);
                 sessionPopup.SetActive(false);
-                accidentPopup.SetActive(true);
+                accidentPopup.SetActive(_session.isPopup);
                 popup = accidentPopup;
                 activeInteraction = true;
                 break;
             default:
                 // 인터렉션 활성화
                 introPopup.SetActive(false);
-                sessionPopup.SetActive(true);
+                sessionPopup.SetActive(_session.isPopup);
+                if (sessionName == "session") popupText.text = _session.text;
                 accidentPopup.SetActive(false);
                 popup = sessionPopup;
                 activeInteraction = true;
                 break;
         }
-        popupText.text = _session.text;
     }
 
     private void HidePopUp()
@@ -244,16 +275,16 @@ public class SessionManager : MonoBehaviour
         }
         else
         {
-            switch (_session.gameObject.name)
+            switch (_session.gameObject.name.ToLower())
             {
-                case "Intro":
+                case "intro":
                     startPopup.SetActive(true);
                     break;
-                case "Accident":
+                case "accident":
                     Invoke(nameof(ShowQuiz), startDelayTime);
                     AccidentDone();
                     break;
-                case "Ending":
+                case "ending":
                     StartCoroutine(EndingProcess());
                     break;
                 default:
@@ -279,7 +310,7 @@ public class SessionManager : MonoBehaviour
         playableDirector.stopped -= OnPlayableDirectorStopped;
         
         // 체험이 있으면 애니 종료후 대기함
-        if (_session.isExp) return;
+        // if (_session.isExp) return;
         
         switch (_session.gameObject.name)
         {
@@ -300,7 +331,11 @@ public class SessionManager : MonoBehaviour
 
     private IEnumerator EndingProcess()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
+        
+        ShowBackUI(true);
+        
+        yield return new WaitForSeconds(3f);
 
         FadeBlack();
         

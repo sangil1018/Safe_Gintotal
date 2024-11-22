@@ -3,7 +3,7 @@ using UnityEngine;
 public class AutoHidePopUP : MonoBehaviour
 {
     [SerializeField] private float hideTime = 5f;
-    [SerializeField] private Outline outline;
+    [SerializeField] private Outline[] outlines;
         
     private void OnEnable()
     {
@@ -13,13 +13,16 @@ public class AutoHidePopUP : MonoBehaviour
 
     private void HideUI()
     {
-        gameObject.SetActive(false);
-    }
-
-    private void OnDisable()
-    {
         SessionManager.Instance.activeInteraction = true;
-        if (SessionManager.Instance.GetSessionName != "Intro") return;
-        if (outline != null) outline.enabled = true;
+        if (SessionManager.Instance.GetSessionName == "Intro") SessionManager.Instance.IntroDone();
+        if (outlines.Length > 0)
+        {
+            foreach (var outline in outlines)
+            {
+                outline.enabled = true;
+            }
+        }
+        
+        gameObject.SetActive(false);
     }
 }
