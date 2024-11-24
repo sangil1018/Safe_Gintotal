@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8998738396947850496}
   m_Layer: 0
-  m_Name: M_W_04_interactions
+  m_Name: 2-4_interactions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
