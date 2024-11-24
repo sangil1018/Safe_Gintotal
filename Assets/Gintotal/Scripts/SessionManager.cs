@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -33,7 +32,7 @@ public class SessionManager : MonoBehaviour
     
     private Session _session;
     public Session GetSession => _session;
-    public string GetSessionName => _session.gameObject.name;
+    public string getSessionName => _session.gameObject.name;
     private GameObject _uiManager;
     private AudioSource _audioSource;
     private QuestToHome _questToHome;
@@ -183,7 +182,7 @@ public class SessionManager : MonoBehaviour
     {
         activeInteraction = !(_session.isAnim || _session.isPopup);
         _session.SetStartingPosition();
-        popupText.text = _session.text;
+        // popupText.text = _session.text;
         
         if (_session.isAnim)
         {
@@ -346,6 +345,40 @@ public class SessionManager : MonoBehaviour
 #else
         _viveToHome.BackButtonToHome();
 #endif
+    }
+    
+    // [SerializeField] private Transform moveTarget;
+    [SerializeField] private float duration = 4f;
+    private string _doneSessionName;
+    
+    public void PlayerMove(string mDoneSessionName)
+    {
+        var moveTarget = _session.transform.position;
+        _doneSessionName = mDoneSessionName;
+        playerOrigin.DOMove(moveTarget, duration, true);
+        
+        Invoke(nameof(ExcuteSessionDone), duration+1f);
+    }
+
+    private void ExcuteSessionDone()
+    {
+        switch (_doneSessionName.ToLower())
+        {
+            case "intro":
+                SessionManager.Instance.IntroDone();
+                return;
+            case "session":
+                SessionManager.Instance.SessionDone();
+                return;
+            case "accident":
+                SessionManager.Instance.AccidentDone();
+                return;
+            case "quiz":
+                SessionManager.Instance.QuizDone();
+                return;
+            default:
+                return;
+        }
     }
 
     public void FadeWhite()
