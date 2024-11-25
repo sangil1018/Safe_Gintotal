@@ -13,7 +13,7 @@ public class QuizSet : MonoBehaviour
     public void InitialQuiz()
     {
         var constrain = SessionManager.Instance.playerOrigin.GetComponent<ParentConstraint>();
-        if (constrain != null) constrain.enabled = false;
+        if (constrain != null) constrain.constraintActive = false;
         foreach (var hide in hideObjs)
         {
             hide.SetActive(false);

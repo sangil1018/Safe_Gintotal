@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Gintotal/Scenes/Quest/ExpQ101.unity
     guid: 8f65b64fc1000bb44aef661d33f6996e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Gintotal/Scenes/Quest/ExpQ102.unity
     guid: de6cc160d9fe27d47a4049431320de91
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ106.unity
+    guid: 36176dba56ffa474b8b69a1fe5080baf
   - enabled: 0
     path: Assets/Gintotal/Scenes/Quest/ExpQ201.unity
     guid: b4370fabf55aced4ba30a9e061f6a8ac
