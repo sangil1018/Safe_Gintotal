@@ -182,7 +182,7 @@ public class SessionManager : MonoBehaviour
     {
         activeInteraction = !(_session.isAnim || _session.isPopup);
         _session.SetStartingPosition();
-        // popupText.text = _session.text;
+        popupText.text = _session.text;
         
         if (_session.isAnim)
         {
@@ -254,8 +254,8 @@ public class SessionManager : MonoBehaviour
             default:
                 // 인터렉션 활성화
                 introPopup.SetActive(false);
+                // if (sessionName.Contains("session")) popupText.text = _session.text;
                 sessionPopup.SetActive(_session.isPopup);
-                if (sessionName == "session") popupText.text = _session.text;
                 accidentPopup.SetActive(false);
                 popup = sessionPopup;
                 activeInteraction = true;
