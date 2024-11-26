@@ -9,7 +9,7 @@ public class ConstrainControl : MonoBehaviour
     {
         // _parentConstraint = SessionManager.Instance.playerOrigin.GetComponent<ParentConstraint>();
     }
-
+    
     private void OnEnable()
     {
         // parentConstraint = SessionManager.Instance.playerOrigin.GetComponent<ParentConstraint>();
@@ -29,5 +29,13 @@ public class ConstrainControl : MonoBehaviour
     public void OffConstrain()
     {
         parentConstraint.constraintActive = false;
+    }
+
+    public void OffConstrainZero()
+    {
+        parentConstraint.constraintActive = false;
+        var offsetTransform = parentConstraint.transform;
+        offsetTransform.localPosition = Vector3.zero;
+        offsetTransform.localEulerAngles = Vector3.zero;
     }
 }

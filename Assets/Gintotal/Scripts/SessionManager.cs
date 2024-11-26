@@ -42,6 +42,8 @@ public class SessionManager : MonoBehaviour
     private bool _isIntroDone;
     private QuizSet _quizSet;
 
+    [SerializeField] private bool quizTester;
+
     private void Awake()
     {
         if (null == _instance)
@@ -71,8 +73,16 @@ public class SessionManager : MonoBehaviour
 
     private void Start()
     {
-        FindChildSessions();
-        ShowIntro();
+        switch (quizTester)
+        {
+            case true:
+                ShowQuiz();
+                break;
+            default:
+                FindChildSessions();
+                ShowIntro();
+                break;
+        }
     }
 
     private void Update()
@@ -119,6 +129,8 @@ public class SessionManager : MonoBehaviour
         SetPopUp();
         ProcessingSession();
     }
+
+    public void SessionDoneDelay(float timeSpan) => Invoke(nameof(SessionDone), timeSpan);
 
     public void SessionDone()
     {
@@ -348,16 +360,16 @@ public class SessionManager : MonoBehaviour
     }
     
     // [SerializeField] private Transform moveTarget;
-    [SerializeField] private float duration = 4f;
+    private const float Duration = 6f;
     private string _doneSessionName;
     
     public void PlayerMove(string mDoneSessionName)
     {
         var moveTarget = _session.transform.position;
         _doneSessionName = mDoneSessionName;
-        playerOrigin.DOMove(moveTarget, duration, true);
+        playerOrigin.DOMove(moveTarget, Duration, true);
         
-        Invoke(nameof(ExcuteSessionDone), duration+1f);
+        Invoke(nameof(ExcuteSessionDone), Duration+1f);
     }
 
     private void ExcuteSessionDone()
