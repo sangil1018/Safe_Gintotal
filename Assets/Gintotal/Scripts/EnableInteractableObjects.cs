@@ -8,9 +8,12 @@ public class EnableInteractableObjects : MonoBehaviour
 
     private void OnDisable()
     {
+        objectsShowSession ??= SessionManager.Instance.getSessionName;
+        
         if (!string.Equals(SessionManager.Instance.getSessionName, objectsShowSession,
             StringComparison.CurrentCultureIgnoreCase)) return;
-        
+
+        if (objects.Length <= 0) return;
         foreach (var obj in objects)
         {
             obj.SetActive(true);

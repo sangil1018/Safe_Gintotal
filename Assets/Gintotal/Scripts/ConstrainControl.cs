@@ -18,11 +18,16 @@ public class ConstrainControl : MonoBehaviour
 
     private void OnDisable()
     {
-        parentConstraint.enabled = true;
+        // parentConstraint.constraintActive = true;
     }
 
     public void OnConstrain()
     {
         parentConstraint.constraintActive = true;
+    }
+    
+    public void OffConstrain()
+    {
+        parentConstraint.constraintActive = false;
     }
 }
