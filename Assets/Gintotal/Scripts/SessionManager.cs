@@ -22,7 +22,7 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private GameObject backPopup;
     [SerializeField] private TMP_Text popupText;
     [SerializeField] private GameObject quizMenu;
-    [SerializeField] private float startDelayTime = 2f;
+    [SerializeField] private float startDelayTime = 1f;
     [SerializeField] private float hidePopupTime = 10f;
 
     public GameObject interaction;
@@ -33,7 +33,7 @@ public class SessionManager : MonoBehaviour
     
     private Session _session;
     public Session GetSession => _session;
-    public string getSessionName => _session.gameObject.name;
+    public string GETSessionName => _session.gameObject.name;
     private GameObject _uiManager;
     private AudioSource _audioSource;
     private QuestToHome _questToHome;
@@ -228,7 +228,7 @@ public class SessionManager : MonoBehaviour
             Invoke(nameof(DelayPopUp), 1f);
             if (_audioSource.clip != null) hidePopupTime = _audioSource.clip.length;
             
-            Invoke(nameof(HidePopUp), hidePopupTime);
+            Invoke(nameof(HidePopUp), hidePopupTime + 1f);
         }
         else
         {
@@ -386,7 +386,7 @@ public class SessionManager : MonoBehaviour
         _doneSessionName = mDoneSessionName;
         playerOrigin.DOMove(moveTarget, Duration, true);
         
-        Invoke(nameof(ExcuteSessionDone), Duration+1f);
+        Invoke(nameof(ExcuteSessionDone), Duration + 1f);
     }
 
     private void ExcuteSessionDone()
@@ -394,16 +394,16 @@ public class SessionManager : MonoBehaviour
         switch (_doneSessionName.ToLower())
         {
             case "intro":
-                SessionManager.Instance.IntroDone();
+                IntroDone();
                 return;
             case "session":
-                SessionManager.Instance.SessionDone();
+                SessionDone();
                 return;
             case "accident":
-                SessionManager.Instance.AccidentDone();
+                AccidentDone();
                 return;
             case "quiz":
-                SessionManager.Instance.QuizDone();
+                QuizDone();
                 return;
             default:
                 return;

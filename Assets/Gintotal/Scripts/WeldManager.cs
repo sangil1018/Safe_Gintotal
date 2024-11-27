@@ -11,7 +11,7 @@ public class WeldMananger : MonoBehaviour
     private int _targetCount;      // 현재 충족된 타겟 개수
     private int _weldGroupCount;      // 현재 충족된 그룹 개수
 
-    private const int TargetLength = 7;
+    [SerializeField] private int targetLength = 7;
     [SerializeField] private float delayTime = 2f;
 
     private float _timer;
@@ -62,28 +62,25 @@ public class WeldMananger : MonoBehaviour
 
         targets = objs.ToArray();
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        // 3. Source와 Target Sphere 충돌 감지
-        foreach (var target in targets)
+        if (targets[_targetCount].name == other.gameObject.name)
         {
-            if (other.gameObject == target)
-            {
-                HandleCollision(target);
-                break;
-            }
+            HandleCollision(targets[_targetCount]);
+            other.enabled = false;
         }
     }
 
     private void HandleCollision(GameObject sphere)
     {
         var material = sphere.GetComponent<MeshRenderer>().material;
-        material.DOColor(Color.red, 2f).OnComplete(() =>
+        material.DOColor(Color.red, 1.5f).OnComplete(() =>
         {
             sphere.SetActive(false); // Sphere 삭제
             _targetCount++;  // 카운터 증가
 
-            if (_targetCount < TargetLength)
+            if (_targetCount < targetLength)
             {
                 targets[_targetCount].GetComponent<MeshRenderer>().material.color = Color.yellow;
                 targets[_targetCount].GetComponent<SphereCollider>().enabled = true;

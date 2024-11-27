@@ -40,12 +40,12 @@ public class ViveToHome : MonoBehaviour
 
     public void CameraToWhite()
     {
-        _canvasGroup.DOFade(0, 1f).SetEase(Ease.InCubic); // 시작할때 검->흰 페이드
+        _canvasGroup.DOFade(0, 0.5f).SetEase(Ease.InCubic); // 시작할때 검->흰 페이드
     }
 
     public void CameraToBlack()
     {
-        _canvasGroup.DOFade(1, 1f).SetEase(Ease.InCubic); // 시작할때 검->흰 페이드
+        _canvasGroup.DOFade(1, 0.5f).SetEase(Ease.InCubic); // 시작할때 검->흰 페이드
     }
 
     public void BackButtonToHome() => LaunchHome();

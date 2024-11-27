@@ -8,9 +8,9 @@ public class EnableInteractableOutlines : MonoBehaviour
 
     private void OnDisable()
     {
-        objectsShowSession ??= SessionManager.Instance.getSessionName;
+        // objectsShowSession ??= SessionManager.Instance.GETSessionName;
         
-        if (!string.Equals(SessionManager.Instance.getSessionName, objectsShowSession,
+        if (!string.Equals(SessionManager.Instance.GETSessionName, objectsShowSession,
             StringComparison.CurrentCultureIgnoreCase)) return;
 
         if (outlines.Length <= 0) return;

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c43ecc2649744884b81b64879936b049
+timeCreated: 1541931950
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 132990
+  packageName: Refinery vol 3
+  packageVersion: 1.0
+  assetPath: Assets/Refinery/Resources/Prefabs/Refinery37.prefab
+  uploadId: 277970

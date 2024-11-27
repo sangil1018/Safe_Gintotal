@@ -8,9 +8,12 @@ public class EnableInteractableObjects : MonoBehaviour
 
     private void OnDisable()
     {
-        objectsShowSession ??= SessionManager.Instance.getSessionName;
+        // if (objectsShowSession == null)
+        // {
+        //     objectsShowSession = SessionManager.Instance.GETSessionName;
+        // }
         
-        if (!string.Equals(SessionManager.Instance.getSessionName, objectsShowSession,
+        if (!string.Equals(SessionManager.Instance.GETSessionName, objectsShowSession,
             StringComparison.CurrentCultureIgnoreCase)) return;
 
         if (objects.Length <= 0) return;

@@ -14,7 +14,7 @@ public class AutoHidePopUP : MonoBehaviour
     private void HideUI()
     {
         SessionManager.Instance.activeInteraction = true;
-        if (SessionManager.Instance.getSessionName == "Intro") SessionManager.Instance.IntroDone();
+        if (SessionManager.Instance.GETSessionName == "Intro") SessionManager.Instance.IntroDone();
         if (outlines.Length > 0)
         {
             foreach (var outline in outlines)

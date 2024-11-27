@@ -1,15 +1,13 @@
-using System;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class Session : MonoBehaviour
 {
-    public string text = "시작과 관련된 \n텍스트를 적습니다.\n세줄까지 정렬 가능합니다.";
+    public string text = "시작과 관련된 \n텍스트를 적습니다.\n세줄까지 정렬 가능합니다. \n추가 텍스트";
     public bool isAnim = true;
     public bool startAnim = true;
     public bool isPopup = true;
@@ -21,7 +19,7 @@ public class Session : MonoBehaviour
 
     private void OnEnable()
     {
-        inputActions = SessionManager.Instance.GetInputActionManager().actionAssets[0];
+        // inputActions = SessionManager.Instance.GetInputActionManager().actionAssets[0];
     }
 
     public void SetStartingPosition()
@@ -65,7 +63,7 @@ public class Session : MonoBehaviour
         }
 
         // Input System 리프레시
-        // RefreshInputActions();
+        RefreshInputActions();
     }
 
     private bool TryRecenterOrigin()
@@ -86,20 +84,20 @@ public class Session : MonoBehaviour
         return false; // 리센터 실패
     }
 
-    // private void RefreshInputActions()
-    // {
-    //     if (inputActions == null)
-    //     {
-    //         Debug.LogWarning("InputActionAsset이 설정되지 않았습니다.");
-    //         return;
-    //     }
-    //
-    //     // InputActionAsset을 비활성화 후 활성화
-    //     inputActions.Disable();
-    //     inputActions.Enable();
-    //
-    //     Debug.Log("Input System 액션이 리프레시되었습니다.");
-    // }
+    private void RefreshInputActions()
+    {
+        if (inputActions == null)
+        {
+            Debug.LogWarning("InputActionAsset이 설정되지 않았습니다.");
+            return;
+        }
+    
+        // InputActionAsset을 비활성화 후 활성화
+        inputActions.Disable();
+        inputActions.Enable();
+    
+        Debug.Log("Input System 액션이 리프레시되었습니다.");
+    }
 
     public void GetDirector()
     {
