@@ -4,6 +4,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class SessionManager : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class SessionManager : MonoBehaviour
     private bool _isPaused;
     private bool _isIntroDone;
     private QuizSet _quizSet;
+    private InputActionManager _inputActionManager;
 
     [SerializeField] private bool quizTester;
 
@@ -61,6 +63,8 @@ public class SessionManager : MonoBehaviour
         popup.SetActive(false);
 
         _quizSet = quiz.GetComponent<QuizSet>();
+
+        _inputActionManager = GetComponent<InputActionManager>();
         
 #if UNITY_ANDROID
         _questToHome = _uiManager.GetComponent<QuestToHome>();
@@ -68,7 +72,12 @@ public class SessionManager : MonoBehaviour
         _viveToHome = _uiManager.GetComponent<ViveToHome>();
 #endif
     }
-    
+
+    public InputActionManager GetInputActionManager()
+    {
+        return _inputActionManager;
+    }
+
     public static SessionManager Instance => null == _instance ? null : _instance;
 
     private void Start()
@@ -110,7 +119,8 @@ public class SessionManager : MonoBehaviour
     {
         intro.SetActive(true);
         _session = intro.GetComponent<Session>();
-
+        _session.SetStartingPosition();
+        
         SetPopUp("Intro");
         ProcessingSession();
     }
@@ -126,6 +136,8 @@ public class SessionManager : MonoBehaviour
     {
         sessions[currentSessionID].SetActive(true);
         _session = sessions[currentSessionID].GetComponent<Session>();
+        _session.SetStartingPosition();
+        
         SetPopUp();
         ProcessingSession();
     }
@@ -148,6 +160,8 @@ public class SessionManager : MonoBehaviour
         hidePopupTime = 10f;
         accident.SetActive(true);
         _session = accident.GetComponent<Session>();
+        _session.SetStartingPosition();
+        
         SetPopUp("Accident");
         ProcessingSession();
     }
@@ -164,6 +178,8 @@ public class SessionManager : MonoBehaviour
         hidePopupTime = 5f;
         quiz.SetActive(true);
         _session = quiz.GetComponent<Session>();
+        _session.SetStartingPosition();
+        
         if (!_session.isDone)
         {
             quizMenu.SetActive(true);
@@ -186,6 +202,7 @@ public class SessionManager : MonoBehaviour
     {
         ending.SetActive(true);
         _session = ending.GetComponent<Session>();
+        _session.SetStartingPosition();
         
         ProcessingSession();
     }
@@ -193,7 +210,7 @@ public class SessionManager : MonoBehaviour
     private void ProcessingSession()
     {
         activeInteraction = !(_session.isAnim || _session.isPopup);
-        _session.SetStartingPosition();
+        
         popupText.text = _session.text;
         
         if (_session.isAnim)
