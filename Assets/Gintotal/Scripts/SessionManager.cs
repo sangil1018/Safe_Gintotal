@@ -120,6 +120,7 @@ public class SessionManager : MonoBehaviour
         intro.SetActive(true);
         _session = intro.GetComponent<Session>();
         _session.SetStartingPosition();
+        _session.RefreshControllers();
         
         SetPopUp("Intro");
         ProcessingSession();
@@ -170,7 +171,8 @@ public class SessionManager : MonoBehaviour
     {
         FadeBlack();
         accident.SetActive(false);
-        ShowQuiz();
+        Invoke(nameof(ShowQuiz), startDelayTime);
+        // ShowQuiz();
     }
 
     private void ShowQuiz()
@@ -309,7 +311,7 @@ public class SessionManager : MonoBehaviour
                     startPopup.SetActive(true);
                     break;
                 case "accident":
-                    Invoke(nameof(ShowQuiz), startDelayTime);
+                    // Invoke(nameof(ShowQuiz), startDelayTime);
                     AccidentDone();
                     break;
                 case "ending":

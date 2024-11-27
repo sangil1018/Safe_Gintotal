@@ -25,16 +25,16 @@ public class Session : MonoBehaviour
     public void SetStartingPosition()
     {
         if (!isStartPosition) return;
-        _xrOrigin = SessionManager.Instance.playerOrigin.GetComponent<XROrigin>();
-        // var transform1 = transform;
-        // SessionManager.Instance.playerOrigin.SetPositionAndRotation(transform1.position, transform1.rotation);
-        _xrOrigin.MoveCameraToWorldLocation(transform.position);
-        _xrOrigin.transform.localRotation = transform.localRotation;
+        // _xrOrigin = SessionManager.Instance.playerOrigin.GetComponent<XROrigin>();
+        var transform1 = transform;
+        SessionManager.Instance.playerOrigin.SetPositionAndRotation(transform1.position, transform1.rotation);
+        // _xrOrigin.MoveCameraToWorldLocation(transform.position);
+        // _xrOrigin.transform.localRotation = transform.localRotation;
         
-        RefreshControllers();
+        // RefreshControllers();
     }
     
-    private void RefreshControllers()
+    public void RefreshControllers()
     {
         // XR Input Subsystem을 통해 TryRecenter 호출
         if (TryRecenterOrigin())

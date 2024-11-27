@@ -75,7 +75,7 @@ public class WeldMananger : MonoBehaviour
     private void HandleCollision(GameObject sphere)
     {
         var material = sphere.GetComponent<MeshRenderer>().material;
-        material.DOColor(Color.red, 1.5f).OnComplete(() =>
+        material.DOColor(Color.red, 1f).OnComplete(() =>
         {
             sphere.SetActive(false); // Sphere 삭제
             _targetCount++;  // 카운터 증가
