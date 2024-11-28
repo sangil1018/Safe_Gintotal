@@ -28494,7 +28494,7 @@ MonoBehaviour:
   playableDirector: {fileID: 0}
   currentSessionID: 0
   activeInteraction: 0
-  quizTester: 1
+  quizTester: 0
 --- !u!1001 &4008821036856123905
 PrefabInstance:
   m_ObjectHideFlags: 0
