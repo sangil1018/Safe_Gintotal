@@ -38,7 +38,7 @@ public class SessionManager : MonoBehaviour
     private AudioSource _audioSource;
     private QuestToHome _questToHome;
     private ViveToHome _viveToHome;
-    public bool activeInteraction;
+    // public bool activeInteraction;
     private bool _isPaused;
     private bool _isIntroDone;
     private QuizSet _quizSet;
@@ -96,7 +96,7 @@ public class SessionManager : MonoBehaviour
 
     private void Update()
     {
-        interaction.SetActive(activeInteraction && !introPopup.activeSelf && !startPopup.activeSelf && !sessionPopup.activeSelf && !accidentPopup.activeSelf && !backPopup.activeSelf);
+        // interaction.SetActive(activeInteraction && !introPopup.activeSelf && !startPopup.activeSelf && !sessionPopup.activeSelf && !accidentPopup.activeSelf && !backPopup.activeSelf);
     }
 
     private void FindChildSessions()
@@ -120,7 +120,7 @@ public class SessionManager : MonoBehaviour
         intro.SetActive(true);
         _session = intro.GetComponent<Session>();
         _session.SetStartingPosition();
-        _session.RefreshControllers();
+        // _session.RefreshControllers();
         
         SetPopUp("Intro");
         ProcessingSession();
@@ -211,7 +211,7 @@ public class SessionManager : MonoBehaviour
 
     private void ProcessingSession()
     {
-        activeInteraction = !(_session.isAnim || _session.isPopup);
+        // activeInteraction = !(_session.isAnim || _session.isPopup);
         
         popupText.text = _session.text;
         
@@ -221,7 +221,6 @@ public class SessionManager : MonoBehaviour
             // _session.GetDirector();
             // playableDirector.stopped += OnPlayableDirectorStopped;
         }
-        _audioSource = _session.GetComponent<AudioSource>();
 
         FadeWhite();
         
@@ -267,6 +266,8 @@ public class SessionManager : MonoBehaviour
 
     private void SetPopUp(string sessionName = "Session")
     {
+        _audioSource = _session.GetComponent<AudioSource>();
+        
         switch (sessionName.ToLower())
         {
             case "intro":
@@ -280,7 +281,7 @@ public class SessionManager : MonoBehaviour
                 sessionPopup.SetActive(false);
                 accidentPopup.SetActive(_session.isPopup);
                 popup = accidentPopup;
-                activeInteraction = true;
+                // activeInteraction = true;
                 break;
             default:
                 // 인터렉션 활성화
@@ -289,9 +290,10 @@ public class SessionManager : MonoBehaviour
                 sessionPopup.SetActive(_session.isPopup);
                 accidentPopup.SetActive(false);
                 popup = sessionPopup;
-                activeInteraction = true;
+                // activeInteraction = true;
                 break;
         }
+        _audioSource.Play();
     }
 
     private void HidePopUp()
@@ -301,7 +303,7 @@ public class SessionManager : MonoBehaviour
         if (_session.isAnim && _session.startAnim)
         {
             Invoke(nameof(PlayAnimation), startDelayTime);
-            activeInteraction = true;
+            // activeInteraction = true;
         }
         else
         {
@@ -319,7 +321,7 @@ public class SessionManager : MonoBehaviour
                     break;
                 default:
                     // 인터렉션 활성화
-                    activeInteraction = true;
+                    // activeInteraction = true;
                     break;
             }
         }
@@ -335,7 +337,7 @@ public class SessionManager : MonoBehaviour
             Debug.Log("PlayableDirector named " + aDirector.name + " is now stopped.");
         
         // 인터렉션 활성화
-        activeInteraction = true;
+        // activeInteraction = true;
         
         playableDirector.stopped -= OnPlayableDirectorStopped;
         

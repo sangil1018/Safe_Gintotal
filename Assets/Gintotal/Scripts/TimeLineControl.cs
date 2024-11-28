@@ -16,7 +16,7 @@ public class TimeLineControl : MonoBehaviour
 
     private void OnEnable()
     {
-        hands.SetActive(false);
+        if (hands != null) hands.SetActive(false);
         _timeline = GetComponent<PlayableDirector>();
         _timeline.Play();
         _timeline.Pause();

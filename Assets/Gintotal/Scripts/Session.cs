@@ -15,7 +15,7 @@ public class Session : MonoBehaviour
     public bool isDone = true;
 
     private XROrigin _xrOrigin;
-    public InputActionAsset inputActions; // InputActionAsset 참조 (XR Interaction Input)
+    // public InputActionAsset inputActions; // InputActionAsset 참조 (XR Interaction Input)
 
     private void OnEnable()
     {
@@ -31,7 +31,7 @@ public class Session : MonoBehaviour
         // _xrOrigin.MoveCameraToWorldLocation(transform.position);
         // _xrOrigin.transform.localRotation = transform.localRotation;
         
-        // RefreshControllers();
+        RefreshControllers();
     }
     
     public void RefreshControllers()
@@ -63,7 +63,7 @@ public class Session : MonoBehaviour
         }
 
         // Input System 리프레시
-        RefreshInputActions();
+        // RefreshInputActions();
     }
 
     private bool TryRecenterOrigin()
@@ -84,20 +84,20 @@ public class Session : MonoBehaviour
         return false; // 리센터 실패
     }
 
-    private void RefreshInputActions()
-    {
-        if (inputActions == null)
-        {
-            Debug.LogWarning("InputActionAsset이 설정되지 않았습니다.");
-            return;
-        }
-    
-        // InputActionAsset을 비활성화 후 활성화
-        inputActions.Disable();
-        inputActions.Enable();
-    
-        Debug.Log("Input System 액션이 리프레시되었습니다.");
-    }
+    // public void RefreshInputActions()
+    // {
+    //     if (inputActions == null)
+    //     {
+    //         Debug.LogWarning("InputActionAsset이 설정되지 않았습니다.");
+    //         return;
+    //     }
+    //
+    //     // InputActionAsset을 비활성화 후 활성화
+    //     inputActions.Disable();
+    //     inputActions.Enable();
+    //
+    //     Debug.Log("Input System 액션이 리프레시되었습니다.");
+    // }
 
     public void GetDirector()
     {

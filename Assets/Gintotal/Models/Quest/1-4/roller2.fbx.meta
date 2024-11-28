@@ -3,7 +3,12 @@ guid: d9ca8356e8e0d454baf1787700e81c36
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Asphalt_roller_glass
+    second: {fileID: 2100000, guid: 81f94fb0816fc6542a80b849f3bbf66e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

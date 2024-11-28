@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AutoHidePopUP : MonoBehaviour
@@ -7,13 +8,13 @@ public class AutoHidePopUP : MonoBehaviour
         
     private void OnEnable()
     {
-        SessionManager.Instance.activeInteraction = false;
+        // SessionManager.Instance.activeInteraction = false;
         Invoke(nameof(HideUI), hideTime);
     }
 
     private void HideUI()
     {
-        SessionManager.Instance.activeInteraction = true;
+        // SessionManager.Instance.activeInteraction = true;
         if (SessionManager.Instance.GETSessionName == "Intro") SessionManager.Instance.IntroDone();
         if (outlines.Length > 0)
         {
@@ -24,5 +25,10 @@ public class AutoHidePopUP : MonoBehaviour
         }
         
         gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        // SessionManager.Instance.GetSession.RefreshInputActions();
     }
 }
