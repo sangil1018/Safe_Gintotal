@@ -185,7 +185,7 @@ public class SessionManager : MonoBehaviour
         // ShowQuiz();
     }
 
-    private void ShowQuiz()
+    public void ShowQuiz()
     {
         hidePopupTime = 5f;
         quiz.SetActive(true);
@@ -236,6 +236,8 @@ public class SessionManager : MonoBehaviour
         
         if (_session.isPopup)
         {
+            _audioSource = _session.GetComponent<AudioSource>();
+            
             Invoke(nameof(DelayPopUp), 1f);
             if (_audioSource.clip != null) hidePopupTime = _audioSource.clip.length + 2f;
             
@@ -272,12 +274,14 @@ public class SessionManager : MonoBehaviour
         }
     }
 
-    private void DelayPopUp() => popup.SetActive(true);
+    private void DelayPopUp()
+    {
+        popup.SetActive(true);
+        if (_audioSource.clip != null) _audioSource.Play();
+    }
 
     private void SetPopUp(string sessionName = "Session")
     {
-        _audioSource = _session.GetComponent<AudioSource>();
-        
         switch (sessionName.ToLower())
         {
             case "intro":
@@ -304,7 +308,7 @@ public class SessionManager : MonoBehaviour
                 break;
         }
         
-        Invoke(nameof(PlayAudioPopUp), 2f);
+        // Invoke(nameof(PlayAudioPopUp), 2f);
     }
 
     private void PlayAudioPopUp()
@@ -342,8 +346,7 @@ public class SessionManager : MonoBehaviour
                         StartCoroutine(EndingProcess());
                         break;
                     default:
-                        // 인터렉션 활성화
-                        // activeInteraction = true;
+                        if (_session.nextSession) SessionDone();
                         break;
                 }
             }

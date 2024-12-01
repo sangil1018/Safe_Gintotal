@@ -11,8 +11,11 @@ public class AutoHidePopUP : MonoBehaviour
     {
         if (_audioSource != null)
         {
-            _audioSource.Play();
-            hideTime = _audioSource.clip.length;
+            if (_audioSource.clip != null)
+            {
+                _audioSource.Play();
+                hideTime = _audioSource.clip.length;
+            }
         }
         // SessionManager.Instance.activeInteraction = false;
         Invoke(nameof(HideUI), hideTime + 1f);

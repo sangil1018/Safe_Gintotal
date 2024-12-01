@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using DG.Tweening;
 
 [DisallowMultipleComponent]
 
@@ -111,8 +110,6 @@ public class Outline : MonoBehaviour {
       materials.Add(outlineFillMaterial);
 
       renderer.materials = materials.ToArray();
-
-      outlineFillMaterial.DOColor(Color.gray, 0.5f).SetLoops(-1, LoopType.Yoyo);
     }
   }
 
