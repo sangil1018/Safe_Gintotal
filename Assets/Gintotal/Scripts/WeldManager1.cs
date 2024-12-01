@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class WeldMananger1 : MonoBehaviour
 {
@@ -9,6 +7,10 @@ public class WeldMananger1 : MonoBehaviour
     [SerializeField] private float delayTime = 2f;
     private float _overlapTimer = 0.0f; // 현재 겹친 시간
     private bool _isOverlapping = false; // 겹치고 있는 상태
+    private Collider _collider;
+
+    [SerializeField] private GameObject changeObj;
+    [SerializeField] private bool change;
 
     private void Update()
     {
@@ -34,6 +36,7 @@ public class WeldMananger1 : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
+            _collider = other;
             _isOverlapping = true;
         }
     }
@@ -48,7 +51,19 @@ public class WeldMananger1 : MonoBehaviour
 
     private void WeldActionDone()
     {
+        _isOverlapping = false;
+        
+        if (_collider != null)
+        {
+            _collider.gameObject.SetActive(false);
+            _collider = null;
+        }
+
         SessionManager.Instance.SessionDone();
+        
+        if (!change) return;
+        changeObj.SetActive(true);
+        gameObject.SetActive(false);
         // 또는 파티클 등 이펙트 실행 시키고 넘어가기.
         // particleFX.SetActive(true);
     }

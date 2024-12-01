@@ -44,9 +44,9 @@ public class TimeLineControl : MonoBehaviour
         }
 
         // 오른쪽 트리거를 누르고 있을 때 정방향 재생
-        if (forwardTrigger.action.IsPressed())
+        if (forwardTrigger.action.IsPressed() || backwardTrigger.action.IsPressed())
         {
-            _isReversing = false;
+            // _isReversing = false;
             _timeline.playableGraph.GetRootPlayable(0).SetSpeed(PlaySpeed);
             if (_timeline.state != PlayState.Playing)
             {
@@ -55,19 +55,19 @@ public class TimeLineControl : MonoBehaviour
             }
         }
         // 왼쪽 트리거를 누르고 있을 때 역방향 재생
-        else if (backwardTrigger.action.IsPressed())
-        {
-            _isReversing = true;
-            if (_timeline.state == PlayState.Playing)
-            {
-                if (hands != null) hands.SetActive(true);
-                _timeline.Pause();
-            } // 역방향 재생에서는 Play 중단
-        }
+        // else if (backwardTrigger.action.IsPressed())
+        // {
+        //     _isReversing = true;
+        //     if (_timeline.state == PlayState.Playing)
+        //     {
+        //         if (hands != null) hands.SetActive(true);
+        //         _timeline.Pause();
+        //     } // 역방향 재생에서는 Play 중단
+        // }
         // 트리거를 놓았을 때 멈춤
         else
         {
-            _isReversing = false;
+            // _isReversing = false;
             if (hands != null) hands.SetActive(false);
             _timeline.Pause();
         }

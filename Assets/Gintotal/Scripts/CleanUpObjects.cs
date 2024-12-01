@@ -4,7 +4,7 @@ public class CleanUpObjects : MonoBehaviour
 {
     [SerializeField] private int cleanUpCount;
     private int _trashCount;
-    private const float DelayTime = 2f;
+    [SerializeField] private float delayTime = 2f;
 
     public void CleanUp()
     {
@@ -12,7 +12,7 @@ public class CleanUpObjects : MonoBehaviour
 
         if (_trashCount == cleanUpCount)
         {
-            Invoke(nameof(NextSession), DelayTime);
+            Invoke(nameof(NextSession), delayTime);
         }
     }
 
