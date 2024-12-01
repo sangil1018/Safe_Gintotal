@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StartOnOff : MonoBehaviour
 {
     [SerializeField] private GameObject[] hideObjs;
     [SerializeField] private GameObject[] showObjs;
+    [SerializeField] private Outline[] outlines;
 
     private void OnEnable()
     {
@@ -17,11 +15,20 @@ public class StartOnOff : MonoBehaviour
                 hObj.SetActive(false);
             }
         }
+        
         if (showObjs.Length > 0)
         {
             foreach (var sObj in showObjs)
             {
                 sObj.SetActive(true);
+            }
+        }
+        
+        if (outlines.Length > 0)
+        {
+            foreach (var line in outlines)
+            {
+                line.enabled = true;
             }
         }
     }

@@ -133,7 +133,7 @@ public class SessionManager : MonoBehaviour
         ShowSession();
     }
 
-    private void ShowSession()
+    public void ShowSession()
     {
         sessions[currentSessionID].SetActive(true);
         _session = sessions[currentSessionID].GetComponent<Session>();
@@ -156,7 +156,17 @@ public class SessionManager : MonoBehaviour
         else ShowSession();
     }
 
-    private void ShowAccident()
+    public void SessionCurruptToAccident()
+    {
+        FadeBlack();
+        
+        sessions[currentSessionID].SetActive(false);
+        currentSessionID += 1;
+        
+        ShowAccident();
+    }
+
+    public void ShowAccident()
     {
         hidePopupTime = 10f;
         accident.SetActive(true);
@@ -227,9 +237,9 @@ public class SessionManager : MonoBehaviour
         if (_session.isPopup)
         {
             Invoke(nameof(DelayPopUp), 1f);
-            if (_audioSource.clip != null) hidePopupTime = _audioSource.clip.length;
+            if (_audioSource.clip != null) hidePopupTime = _audioSource.clip.length + 2f;
             
-            Invoke(nameof(HidePopUp), hidePopupTime + 1f);
+           Invoke(nameof(HidePopUp), hidePopupTime);
         }
         else
         {
@@ -293,6 +303,12 @@ public class SessionManager : MonoBehaviour
                 // activeInteraction = true;
                 break;
         }
+        
+        Invoke(nameof(PlayAudioPopUp), 2f);
+    }
+
+    private void PlayAudioPopUp()
+    {
         _audioSource.Play();
     }
 
@@ -307,22 +323,29 @@ public class SessionManager : MonoBehaviour
         }
         else
         {
-            switch (_session.gameObject.name.ToLower())
+            if (_session.goToAccident)
             {
-                case "intro":
-                    startPopup.SetActive(true);
-                    break;
-                case "accident":
-                    // Invoke(nameof(ShowQuiz), startDelayTime);
-                    AccidentDone();
-                    break;
-                case "ending":
-                    StartCoroutine(EndingProcess());
-                    break;
-                default:
-                    // 인터렉션 활성화
-                    // activeInteraction = true;
-                    break;
+                SessionCurruptToAccident();
+            }
+            else
+            {
+                switch (_session.gameObject.name.ToLower())
+                {
+                    case "intro":
+                        startPopup.SetActive(true);
+                        break;
+                    case "accident":
+                        // Invoke(nameof(ShowQuiz), startDelayTime);
+                        AccidentDone();
+                        break;
+                    case "ending":
+                        StartCoroutine(EndingProcess());
+                        break;
+                    default:
+                        // 인터렉션 활성화
+                        // activeInteraction = true;
+                        break;
+                }
             }
         }
     }

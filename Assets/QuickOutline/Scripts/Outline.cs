@@ -10,11 +10,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DG.Tweening;
 
 [DisallowMultipleComponent]
 
 public class Outline : MonoBehaviour {
-  private static HashSet<Mesh> registeredMeshes = new HashSet<Mesh>();
+  private static HashSet<Mesh> registeredMeshes = new();
+  private float _outlineAlpha;
 
   public enum Mode {
     OutlineAll,
@@ -69,10 +71,10 @@ public class Outline : MonoBehaviour {
   private bool precomputeOutline;
 
   [SerializeField, HideInInspector]
-  private List<Mesh> bakeKeys = new List<Mesh>();
+  private List<Mesh> bakeKeys = new();
 
   [SerializeField, HideInInspector]
-  private List<ListVector3> bakeValues = new List<ListVector3>();
+  private List<ListVector3> bakeValues = new();
 
   private Renderer[] renderers;
   private Material outlineMaskMaterial;
@@ -109,6 +111,8 @@ public class Outline : MonoBehaviour {
       materials.Add(outlineFillMaterial);
 
       renderer.materials = materials.ToArray();
+
+      outlineFillMaterial.DOColor(Color.gray, 0.5f).SetLoops(-1, LoopType.Yoyo);
     }
   }
 

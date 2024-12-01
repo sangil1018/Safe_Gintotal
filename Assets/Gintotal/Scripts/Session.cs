@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.XR;
 
@@ -13,6 +12,7 @@ public class Session : MonoBehaviour
     public bool isPopup = true;
     public bool isStartPosition = true;
     public bool isDone = true;
+    public bool goToAccident;
 
     private XROrigin _xrOrigin;
     // public InputActionAsset inputActions; // InputActionAsset 참조 (XR Interaction Input)
