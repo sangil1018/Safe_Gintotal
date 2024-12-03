@@ -23,8 +23,10 @@ public class QuestToHome : MonoBehaviour
     {
         _canvasGroup = GameObject.Find("OverlayFader").GetComponent<CanvasGroup>();
         _accidentGroup = GameObject.Find("AccidentFader").GetComponent<CanvasGroup>();
+#if UNITY_ANDROID
         _canvasGroup.alpha = 1;
         _accidentGroup.alpha = 0;
+#endif
     }
     
     private void Start() => runInBackground = true;

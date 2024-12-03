@@ -33,8 +33,11 @@ EditorBuildSettings:
     path: Assets/Gintotal/Scenes/Quest/ExpQ205.unity
     guid: 33879fecec91f1d489f4b46c63198997
   - enabled: 1
-    path: Assets/MotionHouseSDK/Scenes/MotionTestScene.unity
-    guid: 423a97f677f48de4fbf6028761ddbf91
+    path: Assets/Gintotal/Scenes/Vive/ExpV303.unity
+    guid: cd195b2b20d7f44478ed432178b9d18f
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Vive/ExpV303-1.unity
+    guid: e00c2c31231c42e4ab2f4f07ddfa9b19
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 0ea2702b08c576f42b63169e2f8fc347, type: 2}

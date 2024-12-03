@@ -243,7 +243,7 @@ MonoBehaviour:
   m_SnapTurn: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_UIScroll: {fileID: -6756787485274679044, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_SmoothMotionEnabled: 0
+  m_SmoothMotionEnabled: 1
   m_SmoothTurnEnabled: 0
   m_NearFarEnableTeleportDuringNearInteraction: 1
   m_UIScrollingEnabled: 1
@@ -1368,7 +1368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3771689589969558132
 Transform:
   m_ObjectHideFlags: 0
@@ -1796,7 +1796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3595914740002285240
 Transform:
   m_ObjectHideFlags: 0
@@ -2013,7 +2013,6 @@ GameObject:
   - component: {fileID: 6278649656837677056}
   - component: {fileID: 1081303953769618891}
   - component: {fileID: 5492672977271532895}
-  - component: {fileID: 3326912133474043774}
   m_Layer: 0
   m_Name: OverlayFader
   m_TagString: Untagged
@@ -2116,18 +2115,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &3326912133474043774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7431102728892057018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f726cb36cc18d84d82a51645d727325, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7617118553167850059
 GameObject:
   m_ObjectHideFlags: 0

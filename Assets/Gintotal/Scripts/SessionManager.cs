@@ -48,15 +48,16 @@ public class SessionManager : MonoBehaviour
 
     private void Awake()
     {
-        if (null == _instance)
-        {
-            _instance = this;
-            DontDestroyOnLoad((gameObject));
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        _instance = this;
+        // if (null == _instance)
+        // {
+        //     _instance = this;
+        //     DontDestroyOnLoad((gameObject));
+        // }
+        // else
+        // {
+        //     Destroy(gameObject);
+        // }
         
         _uiManager = GameObject.Find("UI Manager");
 
@@ -251,6 +252,7 @@ public class SessionManager : MonoBehaviour
             }
             else
             {
+                if (_session.goToAccident) SessionCurruptToAccident();
                 if (!_session.isDone) return;
                 switch (_session.gameObject.name.ToLower())
                 {
@@ -327,10 +329,7 @@ public class SessionManager : MonoBehaviour
         }
         else
         {
-            if (_session.goToAccident)
-            {
-                SessionCurruptToAccident();
-            }
+            if (_session.goToAccident) SessionCurruptToAccident();
             else
             {
                 switch (_session.gameObject.name.ToLower())
@@ -354,6 +353,7 @@ public class SessionManager : MonoBehaviour
     }
 
     public void PlayAnimation() => playableDirector.Play();
+    public void StopAnimation() => playableDirector.Stop();
     public void PauseAnimation() => playableDirector.Pause();
     public void ResumeAnimation() => playableDirector.Resume();
 
