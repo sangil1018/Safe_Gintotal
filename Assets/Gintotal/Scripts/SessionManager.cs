@@ -25,7 +25,7 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private float startDelayTime = 1f;
     [SerializeField] private float hidePopupTime = 10f;
 
-    public GameObject interaction;
+    // public GameObject interaction;
     public Transform playerOrigin;
     public PlayableDirector playableDirector;
     public int currentSessionID;
@@ -46,6 +46,11 @@ public class SessionManager : MonoBehaviour
 
     [SerializeField] private bool quizTester;
 
+    // public bool leftCtrl;
+    // public bool rightCtrl;
+    // [SerializeField] private GameObject leftController;
+    // [SerializeField] private GameObject rightController;
+
     private void Awake()
     {
         _instance = this;
@@ -59,6 +64,9 @@ public class SessionManager : MonoBehaviour
         //     Destroy(gameObject);
         // }
         
+        // leftController = GameObject.Find("Left Controller");
+        // rightController = GameObject.Find("Right Controller");
+
         _uiManager = GameObject.Find("UI Manager");
 
         popup.SetActive(false);
@@ -97,7 +105,9 @@ public class SessionManager : MonoBehaviour
 
     private void Update()
     {
-        // interaction.SetActive(activeInteraction && !introPopup.activeSelf && !startPopup.activeSelf && !sessionPopup.activeSelf && !accidentPopup.activeSelf && !backPopup.activeSelf);
+        // interaction.SetActive(activeInteraction && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
+        // leftController.SetActive(!leftCtrl && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
+        // rightController.SetActive(!rightCtrl && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
     }
 
     private void FindChildSessions()
@@ -389,10 +399,13 @@ public class SessionManager : MonoBehaviour
 
     private IEnumerator EndingProcess()
     {
+#if UNITY_ANDROID
+
+#else
         yield return new WaitForSeconds(2f);
         
         ShowBackUI(true);
-        
+#endif
         yield return new WaitForSeconds(3f);
 
         FadeBlack();

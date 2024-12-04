@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2d796ced94d61438fbab81b194038162, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -584,6 +584,8 @@ MonoBehaviour:
   isPopup: 1
   isStartPosition: 0
   isDone: 1
+  goToAccident: 0
+  nextSession: 0
 --- !u!1 &249808205
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +852,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1062,16 +1064,16 @@ MonoBehaviour:
   m_TargetOffset: {x: 0, y: 0, z: 0.3}
   m_FollowInLocalSpace: 0
   m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 20
+  m_MovementSpeed: 10
   m_MovementSpeedVariancePercentage: 0
   m_SnapOnEnable: 1
   m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.02
+  m_MinDistanceAllowed: 0
+  m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
   m_RotationFollowMode: 3
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 0.2
+  m_MinAngleAllowed: 0
+  m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
 --- !u!4 &319175832 stripped
 Transform:
@@ -1484,6 +1486,8 @@ MonoBehaviour:
   isPopup: 0
   isStartPosition: 0
   isDone: 1
+  goToAccident: 0
+  nextSession: 0
 --- !u!114 &372120975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,6 +2122,8 @@ MonoBehaviour:
   isPopup: 0
   isStartPosition: 0
   isDone: 1
+  goToAccident: 0
+  nextSession: 0
 --- !u!4 &685585455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2275526217487247716, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -2408,16 +2414,16 @@ MonoBehaviour:
   m_TargetOffset: {x: 0, y: 0, z: 0.3}
   m_FollowInLocalSpace: 0
   m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 20
+  m_MovementSpeed: 10
   m_MovementSpeedVariancePercentage: 0
   m_SnapOnEnable: 1
   m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.02
+  m_MinDistanceAllowed: 0
+  m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
   m_RotationFollowMode: 3
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 0.2
+  m_MinAngleAllowed: 0
+  m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
 --- !u!1 &1062189916
 GameObject:
@@ -2808,16 +2814,16 @@ MonoBehaviour:
   m_TargetOffset: {x: 0, y: 0, z: 0.3}
   m_FollowInLocalSpace: 0
   m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 20
+  m_MovementSpeed: 10
   m_MovementSpeedVariancePercentage: 0
   m_SnapOnEnable: 1
   m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.02
+  m_MinDistanceAllowed: 0
+  m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
   m_RotationFollowMode: 3
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 0.2
+  m_MinAngleAllowed: 0
+  m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
 --- !u!4 &1286775641 stripped
 Transform:
@@ -2898,8 +2904,7 @@ MonoBehaviour:
   playerOrigin: {fileID: 7341482047666098249}
   playableDirector: {fileID: 0}
   currentSessionID: 0
-  activeInteraction: 0
-  duration: 4
+  quizTester: 0
 --- !u!320 &1389275050
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -3441,16 +3446,16 @@ MonoBehaviour:
   m_TargetOffset: {x: 0, y: 0, z: 0.3}
   m_FollowInLocalSpace: 0
   m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 20
+  m_MovementSpeed: 10
   m_MovementSpeedVariancePercentage: 0
   m_SnapOnEnable: 1
   m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.02
+  m_MinDistanceAllowed: 0
+  m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
   m_RotationFollowMode: 3
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 0.2
+  m_MinAngleAllowed: 0
+  m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
 --- !u!1 &1625404389
 GameObject:
@@ -4302,6 +4307,8 @@ MonoBehaviour:
   isPopup: 1
   isStartPosition: 0
   isDone: 1
+  goToAccident: 0
+  nextSession: 0
 --- !u!320 &1982895719
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -4503,16 +4510,16 @@ MonoBehaviour:
   m_TargetOffset: {x: 0, y: 0, z: 0.3}
   m_FollowInLocalSpace: 0
   m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 20
+  m_MovementSpeed: 10
   m_MovementSpeedVariancePercentage: 0
   m_SnapOnEnable: 1
   m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.02
+  m_MinDistanceAllowed: 0
+  m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
   m_RotationFollowMode: 3
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 0.2
+  m_MinAngleAllowed: 0
+  m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
 --- !u!114 &2073726596
 MonoBehaviour:
@@ -4526,6 +4533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa2bc86a09fd7f4ea850d92148e9d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSource: {fileID: 0}
   hideTime: 3
   outlines: []
 --- !u!4 &2075917914 stripped
@@ -4681,6 +4689,8 @@ MonoBehaviour:
   isPopup: 0
   isStartPosition: 0
   isDone: 1
+  goToAccident: 0
+  nextSession: 0
 --- !u!320 &2079541991
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -4996,20 +5006,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d7d89889b4d94fa1f8d6fe49788e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
+  m_Target: {fileID: 7576479732442886827}
   m_TargetOffset: {x: 0, y: 0, z: 0.3}
   m_FollowInLocalSpace: 0
   m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 20
+  m_MovementSpeed: 10
   m_MovementSpeedVariancePercentage: 0
   m_SnapOnEnable: 1
   m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.02
+  m_MinDistanceAllowed: 0
+  m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
   m_RotationFollowMode: 3
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 0.2
+  m_MinAngleAllowed: 0
+  m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
 --- !u!1 &171282379874765901
 GameObject:

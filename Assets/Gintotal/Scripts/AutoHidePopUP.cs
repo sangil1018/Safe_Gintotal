@@ -6,7 +6,8 @@ public class AutoHidePopUP : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private float hideTime = 5f;
     [SerializeField] private Outline[] outlines;
-        
+    [SerializeField] private bool sessionDone;
+    
     private void OnEnable()
     {
         if (_audioSource != null)
@@ -23,14 +24,17 @@ public class AutoHidePopUP : MonoBehaviour
 
     private void HideUI()
     {
-        // SessionManager.Instance.activeInteraction = true;
-        if (SessionManager.Instance.GETSessionName == "Intro")
+        if (sessionDone)
         {
-            SessionManager.Instance.IntroDone();
-        }
-        else
-        {
-            SessionManager.Instance.SessionDone();
+            // SessionManager.Instance.activeInteraction = true;
+            if (SessionManager.Instance.GETSessionName == "Intro")
+            {
+                SessionManager.Instance.IntroDone();
+            }
+            else
+            {
+                SessionManager.Instance.SessionDone();
+            }
         }
 
         if (outlines.Length > 0)

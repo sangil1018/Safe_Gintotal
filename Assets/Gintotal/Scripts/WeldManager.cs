@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -6,7 +7,8 @@ public class WeldMananger : MonoBehaviour
 {
     [SerializeField] private GameObject[] targets; // 타겟 스피어들
     [SerializeField] private GameObject[] weldGroups; // 타겟 스피어 그룹
-    [SerializeField] private GameObject particleFX; // 타겟 스피어 그룹
+    [SerializeField] private AudioSource audioGroups; // 타겟 사운드 그룹
+    [SerializeField] private ParticleSystem particleFX; // 타겟 스피어 그룹
     
     private int _targetCount;      // 현재 충족된 타겟 개수
     private int _weldGroupCount;      // 현재 충족된 그룹 개수
@@ -15,32 +17,10 @@ public class WeldMananger : MonoBehaviour
     [SerializeField] private float delayTime = 2f;
 
     private float _timer;
-    private bool _collide;
+    private bool _isCollide;
+    
+    
 
-    // private void Start()
-    // {
-    //     // 1. Target Sphere에 Collider 추가
-    //     foreach (var sphere in targetSpheres)
-    //     {
-    //         if (sphere != null)
-    //         {
-    //             var sphereCollider = sphere.GetComponent<SphereCollider>();
-    //             if (sphereCollider == null)
-    //             {
-    //                 sphereCollider = sphere.AddComponent<SphereCollider>();
-    //             }
-    //             sphereCollider.isTrigger = false; // 기본 설정: Trigger 아님
-    //         }
-    //     }
-    //
-    //     // 2. Source Object에 Trigger Collider 설정
-    //     var sourceCollider = sourceObject.GetComponent<Collider>();
-    //     if (sourceCollider == null)
-    //     {
-    //         sourceCollider = sourceObject.AddComponent<BoxCollider>(); // 기본 BoxCollider 추가
-    //     }
-    //     sourceCollider.isTrigger = true; // Trigger로 설정
-    // }
 
     private void OnEnable() => ShowWeldGroup();
 
@@ -67,8 +47,28 @@ public class WeldMananger : MonoBehaviour
     {
         if (targets[_targetCount].name == other.gameObject.name)
         {
+            _isCollide = true;
             HandleCollision(targets[_targetCount]);
             other.enabled = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        _isCollide = false;
+    }
+
+    private void Update()
+    {
+        if (_isCollide)
+        {
+            audioGroups.Play();
+            particleFX.Play();
+        }
+        else
+        {
+            audioGroups.Pause();
+            particleFX.Pause();
         }
     }
 
@@ -82,7 +82,7 @@ public class WeldMananger : MonoBehaviour
 
             if (_targetCount < targetLength)
             {
-                targets[_targetCount].GetComponent<MeshRenderer>().material.color = Color.yellow;
+                targets[_targetCount].GetComponent<MeshRenderer>().material.color = Color.white;
                 targets[_targetCount].GetComponent<SphereCollider>().enabled = true;
             }
             else

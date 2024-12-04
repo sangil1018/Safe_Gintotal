@@ -32,10 +32,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Gintotal/Scenes/Quest/ExpQ205.unity
     guid: 33879fecec91f1d489f4b46c63198997
-  - enabled: 1
+  - enabled: 0
     path: Assets/Gintotal/Scenes/Vive/ExpV303.unity
     guid: cd195b2b20d7f44478ed432178b9d18f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Gintotal/Scenes/Vive/ExpV303-1.unity
     guid: e00c2c31231c42e4ab2f4f07ddfa9b19
   m_configObjects:

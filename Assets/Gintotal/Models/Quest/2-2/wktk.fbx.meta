@@ -3,7 +3,12 @@ guid: 160aca05da166c34dab92924c5a50224
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walkie1
+    second: {fileID: 2100000, guid: 1b52a3d582309174ea56dbe7f4f15053, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

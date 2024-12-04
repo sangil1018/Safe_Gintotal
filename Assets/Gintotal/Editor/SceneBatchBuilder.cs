@@ -26,9 +26,9 @@ public class SceneBatchBuilder : MonoBehaviour
             var packageName = $"com.mc.{sceneName}";
 
             // 폴더에 따라 플랫폼 분기
-            if (sceneFolder != null && !sceneFolder.Contains("Quest"))
+            if (sceneFolder != null && !sceneFolder.Contains("Vive"))
             {
-                buildTarget = BuildTarget.StandaloneWindows64;
+                buildTarget = BuildTarget.Android;
                 PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone, packageName);
             }
             else
@@ -90,9 +90,9 @@ public class SceneBatchBuilder : MonoBehaviour
             var packageName = $"com.mc.{sceneName}";
 
             // 폴더에 따라 플랫폼 분기
-            if (sceneFolder != null && !sceneFolder.Contains("Vive"))
+            if (sceneFolder != null && !sceneFolder.Contains("Quest"))
             {
-                buildTarget = BuildTarget.Android;
+                buildTarget = BuildTarget.StandaloneWindows64;
                 PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, packageName);
             }
             else
