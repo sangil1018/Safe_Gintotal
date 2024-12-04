@@ -25,7 +25,7 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private float startDelayTime = 1f;
     [SerializeField] private float hidePopupTime = 10f;
 
-    // public GameObject interaction;
+    public GameObject interaction;
     public Transform playerOrigin;
     public PlayableDirector playableDirector;
     public int currentSessionID;
@@ -38,18 +38,13 @@ public class SessionManager : MonoBehaviour
     private AudioSource _audioSource;
     private QuestToHome _questToHome;
     private ViveToHome _viveToHome;
-    // public bool activeInteraction;
+    public bool activeInteraction;
     private bool _isPaused;
     private bool _isIntroDone;
     private QuizSet _quizSet;
     private InputActionManager _inputActionManager;
 
     [SerializeField] private bool quizTester;
-
-    // public bool leftCtrl;
-    // public bool rightCtrl;
-    // [SerializeField] private GameObject leftController;
-    // [SerializeField] private GameObject rightController;
 
     private void Awake()
     {
@@ -63,9 +58,6 @@ public class SessionManager : MonoBehaviour
         // {
         //     Destroy(gameObject);
         // }
-        
-        // leftController = GameObject.Find("Left Controller");
-        // rightController = GameObject.Find("Right Controller");
 
         _uiManager = GameObject.Find("UI Manager");
 
@@ -105,9 +97,7 @@ public class SessionManager : MonoBehaviour
 
     private void Update()
     {
-        // interaction.SetActive(activeInteraction && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
-        // leftController.SetActive(!leftCtrl && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
-        // rightController.SetActive(!rightCtrl && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
+        interaction.SetActive(!activeInteraction && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
     }
 
     private void FindChildSessions()

@@ -5,39 +5,51 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Gintotal/Scenes/home.unity
-    guid: cfb87f46d0064744191c1eca8b26c18e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ101.unity
     guid: 8f65b64fc1000bb44aef661d33f6996e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ102.unity
     guid: de6cc160d9fe27d47a4049431320de91
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ103.unity
+    guid: 16627ff35312bb447a723269a7d31598
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ104.unity
+    guid: 89aa24c6aba87d94fae7404018f630c0
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ105.unity
+    guid: 641300dfcf1855f4d801dd947f903f3d
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ106.unity
     guid: 36176dba56ffa474b8b69a1fe5080baf
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ107.unity
+    guid: d03027e25006e0744b2259a243b134e9
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ108.unity
+    guid: 25f375bb5141d9a4383cfb655476e66a
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ201.unity
     guid: b4370fabf55aced4ba30a9e061f6a8ac
-  - enabled: 0
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ202.unity
     guid: 97be8e3204ab59948bebc0712006f61f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ203.unity
     guid: f4b4544723093d44483c888f2a84df22
-  - enabled: 0
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ204.unity
     guid: 0718045f38bdb634c83f55ea7e2a4acd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Gintotal/Scenes/Quest/ExpQ205.unity
     guid: 33879fecec91f1d489f4b46c63198997
-  - enabled: 0
-    path: Assets/Gintotal/Scenes/Vive/ExpV303.unity
-    guid: cd195b2b20d7f44478ed432178b9d18f
-  - enabled: 0
-    path: Assets/Gintotal/Scenes/Vive/ExpV303-1.unity
-    guid: e00c2c31231c42e4ab2f4f07ddfa9b19
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ401.unity
+    guid: 8c7e35adb5c5a884f962ca453884b56b
+  - enabled: 1
+    path: Assets/Gintotal/Scenes/Quest/ExpQ402.unity
+    guid: 4678489723e6feb4a8c1d550f3d3d075
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 0ea2702b08c576f42b63169e2f8fc347, type: 2}

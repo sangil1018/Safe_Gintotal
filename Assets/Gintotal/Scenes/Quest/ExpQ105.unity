@@ -219,11 +219,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5167303156274224395, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 8739247041680908258}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &153914081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 657184242222895507, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 8739247041680908258}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &257810521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,11 +1742,6 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1991496186046667789, guid: 60394d111cf239d4eaca503e74e2f64b, type: 3}
   m_PrefabInstance: {fileID: 3856997921912026349}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1787385555 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 8739247041680908258}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1790695042
 GameObject:
@@ -28959,14 +28949,12 @@ MonoBehaviour:
   quizMenu: {fileID: 4613095224346333390}
   startDelayTime: 1
   hidePopupTime: 5
+  interaction: {fileID: 8491595056187096412}
   playerOrigin: {fileID: 7341482047666098249}
   playableDirector: {fileID: 0}
   currentSessionID: 0
+  activeInteraction: 0
   quizTester: 0
-  leftCtrl: 0
-  rightCtrl: 0
-  leftController: {fileID: 1787385555}
-  rightController: {fileID: 153914081}
 --- !u!1001 &4008821036856123905
 PrefabInstance:
   m_ObjectHideFlags: 0

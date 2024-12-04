@@ -4652,9 +4652,11 @@ MonoBehaviour:
   quizMenu: {fileID: 317891864}
   startDelayTime: 1
   hidePopupTime: 5
+  interaction: {fileID: 8491595056187096412}
   playerOrigin: {fileID: 7341482047666098249}
   playableDirector: {fileID: 0}
   currentSessionID: 0
+  activeInteraction: 0
   quizTester: 0
 --- !u!320 &1389275050
 PlayableDirector:

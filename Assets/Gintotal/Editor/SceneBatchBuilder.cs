@@ -29,7 +29,7 @@ public class SceneBatchBuilder : MonoBehaviour
             if (sceneFolder != null && !sceneFolder.Contains("Vive"))
             {
                 buildTarget = BuildTarget.Android;
-                PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone, packageName);
+                PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, packageName);
             }
             else
             {
@@ -93,7 +93,7 @@ public class SceneBatchBuilder : MonoBehaviour
             if (sceneFolder != null && !sceneFolder.Contains("Quest"))
             {
                 buildTarget = BuildTarget.StandaloneWindows64;
-                PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, packageName);
+                PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone, packageName);
             }
             else
             {

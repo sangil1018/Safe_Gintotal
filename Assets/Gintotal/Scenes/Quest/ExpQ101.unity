@@ -1501,7 +1501,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -4174,7 +4174,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -4730,7 +4730,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -4795,7 +4795,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -4966,6 +4966,7 @@ MonoBehaviour:
   playerOrigin: {fileID: 7341482047666098249}
   playableDirector: {fileID: 0}
   currentSessionID: 0
+  activeInteraction: 0
   quizTester: 0
 --- !u!320 &1389275050
 PlayableDirector:
@@ -5659,7 +5660,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -7929,7 +7930,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -9704,7 +9705,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -9837,7 +9838,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -19268,7 +19269,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -19496,8 +19497,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1820897918385990095, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_CameraYOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820897918385990095, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_RootOrder

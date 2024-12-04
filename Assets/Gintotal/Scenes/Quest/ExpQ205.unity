@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -2377,7 +2377,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -2777,7 +2777,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -2856,9 +2856,11 @@ MonoBehaviour:
   quizMenu: {fileID: 317891864}
   startDelayTime: 2
   hidePopupTime: 5
+  interaction: {fileID: 8491595056187096412}
   playerOrigin: {fileID: 7341482047666098249}
   playableDirector: {fileID: 0}
   currentSessionID: 0
+  activeInteraction: 0
   quizTester: 0
 --- !u!320 &1389275050
 PlayableDirector:
@@ -3350,7 +3352,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -4414,7 +4416,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0
@@ -4433,7 +4435,7 @@ MonoBehaviour:
   _audioSource: {fileID: 0}
   hideTime: 3
   outlines: []
-  sessionDone: 0
+  sessionDone: 1
 --- !u!4 &2075917914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8284397115621416856, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -53187,6 +53189,10 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 657184242161839408, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 657184242539281767, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -53197,6 +53203,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1691571359758317101, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820897918385990095, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_CameraYOffset
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1820897918385990095, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -53354,6 +53364,10 @@ PrefabInstance:
     - target: {fileID: 6873022368256633584, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_CurrentTrackingState
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873022368256633593, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7370869476678940946, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53847,7 +53861,7 @@ MonoBehaviour:
   m_MinDistanceAllowed: 0
   m_MaxDistanceAllowed: 0
   m_TimeUntilThresholdReachesMaxDistance: 0
-  m_RotationFollowMode: 3
+  m_RotationFollowMode: 2
   m_MinAngleAllowed: 0
   m_MaxAngleAllowed: 0
   m_TimeUntilThresholdReachesMaxAngle: 0

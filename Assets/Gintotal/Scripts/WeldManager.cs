@@ -9,7 +9,8 @@ public class WeldMananger : MonoBehaviour
     [SerializeField] private GameObject[] weldGroups; // 타겟 스피어 그룹
     [SerializeField] private AudioSource audioGroups; // 타겟 사운드 그룹
     [SerializeField] private ParticleSystem particleFX; // 타겟 스피어 그룹
-    
+    [SerializeField] private GameObject flameOn; // 타겟 스피어 그룹
+
     private int _targetCount;      // 현재 충족된 타겟 개수
     private int _weldGroupCount;      // 현재 충족된 그룹 개수
 
@@ -19,9 +20,6 @@ public class WeldMananger : MonoBehaviour
     private float _timer;
     private bool _isCollide;
     
-    
-
-
     private void OnEnable() => ShowWeldGroup();
 
     public void ShowWeldGroup()
@@ -67,8 +65,8 @@ public class WeldMananger : MonoBehaviour
         }
         else
         {
-            audioGroups.Pause();
-            particleFX.Pause();
+            audioGroups.Stop();
+            particleFX.Stop();
         }
     }
 
@@ -103,7 +101,8 @@ public class WeldMananger : MonoBehaviour
 
     private void WeldActionDone()
     {
-        SessionManager.Instance.SessionDone();
+        flameOn.SetActive(true);
+        SessionManager.Instance.SessionDoneDelay(3f);
         // 또는 파티클 등 이펙트 실행 시키고 넘어가기.
         // particleFX.SetActive(true);
     }
