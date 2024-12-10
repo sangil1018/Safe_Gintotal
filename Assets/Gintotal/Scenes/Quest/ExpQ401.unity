@@ -1016,6 +1016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beaker_fill (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3524,6 +3528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beaker_fill (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4292,7 +4300,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4671,6 +4679,10 @@ PrefabInstance:
     - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
       propertyPath: m_Name
       value: beaker_fill (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8629,7 +8641,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8816431541989260756}
   - {fileID: 2651378973472107710}
   - {fileID: 1302568449}
   - {fileID: 2436555122887991454}
@@ -9778,6 +9789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stirrer_fill (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
       value: 366
@@ -10798,6 +10813,10 @@ PrefabInstance:
     - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_Name
       value: round_botom_flask1_fill (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
@@ -11885,6 +11904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: round_botom_flask1_fill (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -12708,6 +12731,10 @@ PrefabInstance:
     - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
       propertyPath: m_Name
       value: beaker_fill (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14317,7 +14344,7 @@ MonoBehaviour:
   _audioSource: {fileID: 884304066}
   hideTime: 5
   outlines: []
-  sessionDone: 0
+  sessionDone: 1
 --- !u!114 &884304068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15325,6 +15352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: round_botom_flask1_fill (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
       value: 354
@@ -15938,6 +15969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stirrer_fill (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
       value: 359
@@ -16226,6 +16261,10 @@ PrefabInstance:
     - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_Name
       value: round_botom_flask1_fill (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
@@ -20553,7 +20592,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1302568449
 Transform:
@@ -21354,6 +21393,10 @@ PrefabInstance:
     - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
       propertyPath: m_Name
       value: beaker_fill (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23554,6 +23597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beaker_fill (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23862,6 +23909,10 @@ PrefabInstance:
     - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_Name
       value: stirrer_fill (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
@@ -25025,7 +25076,7 @@ MonoBehaviour:
   startAnim: 0
   isPopup: 1
   isStartPosition: 1
-  isDone: 0
+  isDone: 1
   goToAccident: 0
   nextSession: 0
 --- !u!114 &1523626693
@@ -25327,6 +25378,10 @@ PrefabInstance:
     - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_Name
       value: stirrer_fill (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
@@ -27143,6 +27198,16 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 257810523}
+  - {fileID: 2483007494689650358}
+  - {fileID: 3297376189766632013}
+  - {fileID: 1747123924049337260}
+  - {fileID: 7394049427327901971}
+  - {fileID: 6406619297231694213}
+  - {fileID: 8726768787856079837}
+  - {fileID: 3278115158107174387}
+  - {fileID: 3092993033741671442}
+  - {fileID: 1370272949480316921}
+  - {fileID: 4041764933019843739}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1622029624
@@ -28358,6 +28423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stirrer_fill (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -28497,6 +28566,10 @@ PrefabInstance:
     - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_Name
       value: stirrer_fill (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
@@ -31216,6 +31289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: round_botom_flask1_fill (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -32299,7 +32376,7 @@ MonoBehaviour:
   _audioSource: {fileID: 1953780527}
   hideTime: 5
   outlines: []
-  sessionDone: 0
+  sessionDone: 1
 --- !u!114 &1953780529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34017,7 +34094,7 @@ MonoBehaviour:
   _audioSource: {fileID: 2091309667}
   hideTime: 5
   outlines: []
-  sessionDone: 0
+  sessionDone: 1
 --- !u!114 &2091309669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36485,6 +36562,10 @@ PrefabInstance:
     - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
       propertyPath: m_Name
       value: beaker_fill (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38970,9 +39051,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 2.8
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -39013,7 +39094,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -40581,8 +40662,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.8
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -40623,7 +40704,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -40750,8 +40831,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -40792,7 +40873,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -41406,8 +41487,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -41448,7 +41529,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -42015,7 +42096,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: -10.4, y: -30, z: 0}
 --- !u!1001 &1374973786041856506
 PrefabInstance:
@@ -42375,8 +42456,7 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -250882643469657106, guid: 01f320ed51461ca4b89bd94f8b43d1f6, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -43361,8 +43441,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -43403,7 +43483,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -44100,7 +44180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1756412054515089115
 MonoBehaviour:
@@ -44149,7 +44229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1765554862762932313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44346,8 +44426,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -44388,7 +44468,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -45678,6 +45758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stirrer_fill (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
       value: 362
@@ -45860,8 +45944,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 86.3132
   m_CookieSize: 10
@@ -45902,7 +45986,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -46132,8 +46216,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -46174,7 +46258,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -46237,6 +46321,10 @@ PrefabInstance:
     - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
       propertyPath: m_Name
       value: beaker_fill (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47312,7 +47400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &2449781548447353796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47424,7 +47512,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8816431541989260756}
+    m_TransformParent: {fileID: 1615728350}
     m_Modifications:
     - target: {fileID: 8260899137580438419, guid: 15a04750d78e2e146bdf6b5000780d14, type: 3}
       propertyPath: m_Name
@@ -48039,9 +48127,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 96.6
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -48082,7 +48170,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -48566,6 +48654,10 @@ PrefabInstance:
     - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_Name
       value: stirrer_fill (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
@@ -49462,9 +49554,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -49505,7 +49597,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -49773,6 +49865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stirrer_fill (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
       value: 359
@@ -49997,6 +50093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beaker_fill (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50072,8 +50172,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -50114,7 +50214,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -50473,7 +50573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3105096426322341831
 PrefabInstance:
@@ -51548,7 +51648,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3290333586423259766
 PrefabInstance:
@@ -51772,7 +51872,7 @@ Transform:
   - {fileID: 4872457161338989044}
   - {fileID: 7689918003610422547}
   - {fileID: 3163689168900386850}
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3297921901098588892
 PrefabInstance:
@@ -51934,8 +52034,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -51976,7 +52076,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -52549,8 +52649,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -52591,7 +52691,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -52637,6 +52737,10 @@ PrefabInstance:
     - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_Name
       value: stirrer_fill (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
@@ -54645,8 +54749,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -54687,7 +54791,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -55563,6 +55667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chem_ChemTank
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e21a9760a7e0f940be55c0107dda65f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55673,7 +55781,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 114.377, y: 90, z: 90}
 --- !u!4 &4045753597848150999
 Transform:
@@ -56140,7 +56248,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -56344,7 +56452,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 869.4
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -57145,6 +57253,10 @@ PrefabInstance:
     - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
       propertyPath: m_Name
       value: beaker_fill (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58650,8 +58762,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -58692,7 +58804,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -58884,8 +58996,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -58926,7 +59038,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -59949,6 +60061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: round_botom_flask1_fill (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -60449,6 +60565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beaker_fill (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -60558,8 +60678,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 86.3132
   m_CookieSize: 10
@@ -60600,7 +60720,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -60887,8 +61007,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -60929,7 +61049,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -61113,8 +61233,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -61155,7 +61275,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -61626,9 +61746,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -61669,7 +61789,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -61888,6 +62008,10 @@ PrefabInstance:
     - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_Name
       value: round_botom_flask1_fill (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
@@ -63035,8 +63159,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.8
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -63077,7 +63201,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -63971,8 +64095,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -64013,7 +64137,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -64483,7 +64607,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -64538,9 +64662,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.2216981, g: 0.47093856, b: 1, a: 1}
-  m_Intensity: 6.04
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -64581,7 +64705,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -65527,8 +65651,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -65569,7 +65693,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -65952,8 +66076,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 86.3132
   m_CookieSize: 10
@@ -65994,7 +66118,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -66656,9 +66780,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -66699,7 +66823,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -66762,7 +66886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6418082904193728334
 PrefabInstance:
@@ -67075,8 +67199,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -67117,7 +67241,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -67676,7 +67800,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -67750,9 +67874,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -67793,7 +67917,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -67813,8 +67937,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -67855,7 +67979,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -68088,6 +68212,10 @@ PrefabInstance:
     - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_Name
       value: round_botom_flask1_fill (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
@@ -69281,8 +69409,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -69323,7 +69451,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -69656,7 +69784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7240346187873754559, guid: 01f320ed51461ca4b89bd94f8b43d1f6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 127
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70018,9 +70146,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 2.74
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -70061,7 +70189,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -70454,8 +70582,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -70496,7 +70624,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -70697,6 +70825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: round_botom_flask1_fill (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
       value: 354
@@ -70872,9 +71004,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -70915,7 +71047,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -71198,7 +71330,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7419628325294723562
 Transform:
@@ -71807,7 +71939,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -72460,22 +72592,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7844067724664009517, guid: f26559cb994a6ab4cbb5d4ce831445b1, type: 3}
   m_PrefabInstance: {fileID: 7622911764947227272}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7627548214680694362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8816431541989260756}
-  m_Layer: 0
-  m_Name: Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &7670439463791044001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72742,8 +72858,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 86.3132
   m_CookieSize: 10
@@ -72784,7 +72900,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -73167,8 +73283,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -73209,7 +73325,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -73768,9 +73884,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.74221945, b: 0.5424528, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -73811,7 +73927,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -75932,6 +76048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beaker_fill (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7383776698348056577, guid: eb5a60d56a2a2374c9d317f932cb6ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -75987,8 +76107,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -76029,7 +76149,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -76063,6 +76183,10 @@ PrefabInstance:
     - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_Name
       value: stirrer_fill (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
@@ -76811,7 +76935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8816431541989260756}
+  m_Father: {fileID: 1615728350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8736017629367664027
 PrefabInstance:
@@ -77565,6 +77689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: round_botom_flask1_fill (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3653014663026881372, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
       propertyPath: m_RootOrder
       value: 358
@@ -77619,31 +77747,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8702105939551184897, guid: ade3dda6323eed94ebed20ae5d3acb3b, type: 3}
   m_PrefabInstance: {fileID: 8800342121318302925}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8816431541989260756
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7627548214680694362}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2483007494689650358}
-  - {fileID: 1747123924049337260}
-  - {fileID: 7394049427327901971}
-  - {fileID: 6406619297231694213}
-  - {fileID: 8726768787856079837}
-  - {fileID: 3297376189766632013}
-  - {fileID: 3278115158107174387}
-  - {fileID: 3092993033741671442}
-  - {fileID: 1370272949480316921}
-  - {fileID: 4041764933019843739}
-  m_Father: {fileID: 538062037}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8838245028057395245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77688,6 +77791,10 @@ PrefabInstance:
     - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_Name
       value: stirrer_fill (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955514594128479834, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8773054693909717245, guid: e6798f6303634224eaf7e2a765845ba8, type: 3}
       propertyPath: m_RootOrder
@@ -77937,8 +78044,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -77979,7 +78086,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -78117,7 +78224,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &8970903138052973422
 GameObject:
@@ -78681,8 +78788,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.29
-  m_Range: 38.07
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 179
   m_InnerSpotAngle: 23.6
   m_CookieSize: 10
@@ -78723,7 +78830,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.1
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}

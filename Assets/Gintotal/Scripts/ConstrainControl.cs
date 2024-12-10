@@ -25,10 +25,20 @@ public class ConstrainControl : MonoBehaviour
     {
         parentConstraint.constraintActive = true;
     }
+
+    public void OnConstrainBack()
+    {
+        parentConstraint.constraintActive = true;
+        var offsetTransform = parentConstraint.transform;
+        offsetTransform.localPosition = Vector3.zero;
+        offsetTransform.localEulerAngles = Vector3.zero;
+        parentConstraint.locked = true;
+    }
     
     public void OffConstrain()
     {
         parentConstraint.constraintActive = false;
+        parentConstraint.locked = false;
     }
 
     public void OffConstrainZero()
@@ -37,5 +47,6 @@ public class ConstrainControl : MonoBehaviour
         var offsetTransform = parentConstraint.transform;
         offsetTransform.localPosition = Vector3.zero;
         offsetTransform.localEulerAngles = Vector3.zero;
+        parentConstraint.locked = false;
     }
 }
