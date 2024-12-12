@@ -32,7 +32,7 @@ public class QuizSet : MonoBehaviour
 
         if (_count == SessionManager.Instance.MAXCount)
         {
-            Invoke(nameof(GoToEnding), 5f);
+            Invoke(nameof(GoToEnding), 6f);
         }
     }
 

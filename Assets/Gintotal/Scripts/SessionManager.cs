@@ -26,6 +26,8 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private float hidePopupTime = 10f;
 
     public GameObject interaction;
+    public GameObject LeftController;
+    public GameObject RightController;
     public Transform playerOrigin;
     public PlayableDirector playableDirector;
     public int currentSessionID;
@@ -98,6 +100,8 @@ public class SessionManager : MonoBehaviour
     private void Update()
     {
         interaction.SetActive(!activeInteraction && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
+        LeftController.SetActive(!_session.leftCon && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
+        RightController.SetActive(!_session.rightCon && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
     }
 
     private void FindChildSessions()

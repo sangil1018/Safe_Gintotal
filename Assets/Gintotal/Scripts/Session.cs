@@ -16,6 +16,9 @@ public class Session : MonoBehaviour
     public bool goToAccident;
     public bool nextSession;
 
+    public bool leftCon;
+    public bool rightCon;
+
     // private XROrigin _xrOrigin;
     // public InputActionAsset inputActions; // InputActionAsset 참조 (XR Interaction Input)
 
