@@ -16,7 +16,7 @@ public class Session : MonoBehaviour
     public bool goToAccident;
     public bool nextSession;
 
-    private XROrigin _xrOrigin;
+    // private XROrigin _xrOrigin;
     // public InputActionAsset inputActions; // InputActionAsset 참조 (XR Interaction Input)
 
     private void OnEnable()
@@ -28,8 +28,8 @@ public class Session : MonoBehaviour
     {
         if (!isStartPosition) return;
         // _xrOrigin = SessionManager.Instance.playerOrigin.GetComponent<XROrigin>();
-        var transform1 = transform;
-        SessionManager.Instance.playerOrigin.SetPositionAndRotation(transform1.position, transform1.rotation);
+        var target = transform;
+        SessionManager.Instance.playerOrigin.SetPositionAndRotation(target.position, target.rotation);
         // _xrOrigin.MoveCameraToWorldLocation(transform.position);
         // _xrOrigin.transform.localRotation = transform.localRotation;
         
@@ -49,7 +49,7 @@ public class Session : MonoBehaviour
         }
 
         // XR Interaction Toolkit과 컨트롤러 액션 동기화
-        RefreshControllersAndRecenter();
+        // RefreshControllersAndRecenter();
     }
 
     private void RefreshControllersAndRecenter()
