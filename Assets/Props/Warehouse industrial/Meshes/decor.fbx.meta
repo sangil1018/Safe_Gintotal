@@ -32,7 +32,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -107,10 +107,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 285176
-  packageName: Industrial Warehouse Pack
-  packageVersion: 1.0
-  assetPath: Assets/Quad.Vertex/Warehouse industrial/Meshes/decor.fbx
-  uploadId: 665523

@@ -8,6 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class SessionManager : MonoBehaviour
 {
+    // [SerializeField] private Transform moveTarget;
+    private const float Duration = 6f;
     private static SessionManager _instance;
     [SerializeField] private GameObject intro;
     [SerializeField] private GameObject[] sessions;
@@ -31,22 +33,26 @@ public class SessionManager : MonoBehaviour
     public Transform playerOrigin;
     public PlayableDirector playableDirector;
     public int currentSessionID;
-    public readonly int MAXCount = 3;
-    
-    private Session _session;
-    public Session GetSession => _session;
-    public string GETSessionName => _session.gameObject.name;
-    private GameObject _uiManager;
-    private AudioSource _audioSource;
-    private QuestToHome _questToHome;
-    private ViveToHome _viveToHome;
     public bool activeInteraction;
-    private bool _isPaused;
-    private bool _isIntroDone;
-    private QuizSet _quizSet;
-    private InputActionManager _inputActionManager;
 
     [SerializeField] private bool quizTester;
+    public readonly int MAXCount = 3;
+    private AudioSource _audioSource;
+    private string _doneSessionName;
+    private InputActionManager _inputActionManager;
+    private bool _isPlaying;
+    private QuestToHome _questToHome;
+
+    // private bool _isIntroDone;
+    private QuizSet _quizSet;
+
+    private GameObject _uiManager;
+    private ViveToHome _viveToHome;
+    public Session GetSession { get; private set; }
+
+    public string GETSessionName => GetSession.gameObject.name;
+
+    public static SessionManager Instance => null == _instance ? null : _instance;
 
     private void Awake()
     {
@@ -68,20 +74,13 @@ public class SessionManager : MonoBehaviour
         _quizSet = quiz.GetComponent<QuizSet>();
 
         _inputActionManager = GetComponent<InputActionManager>();
-        
+
 #if UNITY_ANDROID
         _questToHome = _uiManager.GetComponent<QuestToHome>();
 #else
         _viveToHome = _uiManager.GetComponent<ViveToHome>();
 #endif
     }
-
-    public InputActionManager GetInputActionManager()
-    {
-        return _inputActionManager;
-    }
-
-    public static SessionManager Instance => null == _instance ? null : _instance;
 
     private void Start()
     {
@@ -99,9 +98,20 @@ public class SessionManager : MonoBehaviour
 
     private void Update()
     {
-        interaction.SetActive(!activeInteraction && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
-        leftController.SetActive(!_session.leftCon && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
-        rightController.SetActive(!_session.rightCon && !popup.activeSelf && !startPopup.activeSelf && !backPopup.activeSelf);
+        _isPlaying = playableDirector != null ? playableDirector.state == PlayState.Playing : false;
+        interaction.SetActive(!activeInteraction && !popup.activeSelf && !startPopup.activeSelf &&
+                              !backPopup.activeSelf && !_isPlaying);
+        leftController.SetActive(!activeInteraction && !GetSession.leftCon && !popup.activeSelf &&
+                                 !startPopup.activeSelf &&
+                                 !backPopup.activeSelf && !_isPlaying);
+        rightController.SetActive(!activeInteraction && !GetSession.rightCon && !popup.activeSelf &&
+                                  !startPopup.activeSelf &&
+                                  !backPopup.activeSelf && !_isPlaying);
+    }
+
+    public InputActionManager GetInputActionManager()
+    {
+        return _inputActionManager;
     }
 
     private void FindChildSessions()
@@ -118,15 +128,18 @@ public class SessionManager : MonoBehaviour
         currentSessionID = 0;
     }
 
-    public void ShowBackUI(bool show) => backPopup.SetActive(show);
+    public void ShowBackUI(bool show)
+    {
+        backPopup.SetActive(show);
+    }
 
     private void ShowIntro()
     {
         intro.SetActive(true);
-        _session = intro.GetComponent<Session>();
-        _session.SetStartingPosition();
+        GetSession = intro.GetComponent<Session>();
+        GetSession.SetStartingPosition();
         // _session.RefreshControllers();
-        
+
         SetPopUp("Intro");
         ProcessingSession();
     }
@@ -141,33 +154,36 @@ public class SessionManager : MonoBehaviour
     public void ShowSession()
     {
         sessions[currentSessionID].SetActive(true);
-        _session = sessions[currentSessionID].GetComponent<Session>();
-        _session.SetStartingPosition();
-        
+        GetSession = sessions[currentSessionID].GetComponent<Session>();
+        GetSession.SetStartingPosition();
+
         SetPopUp();
         ProcessingSession();
     }
 
-    public void SessionDoneDelay(float timeSpan) => Invoke(nameof(SessionDone), timeSpan);
+    public void SessionDoneDelay(float timeSpan)
+    {
+        Invoke(nameof(SessionDone), timeSpan);
+    }
 
     public void SessionDone()
     {
         FadeBlack();
-        
+
         sessions[currentSessionID].SetActive(false);
         currentSessionID += 1;
-        
-        if (_session.isDone) ShowAccident();
+
+        if (GetSession.isDone) ShowAccident();
         else ShowSession();
     }
 
     public void SessionCurruptToAccident()
     {
         FadeBlack();
-        
+
         sessions[currentSessionID].SetActive(false);
         currentSessionID += 1;
-        
+
         ShowAccident();
     }
 
@@ -175,9 +191,9 @@ public class SessionManager : MonoBehaviour
     {
         hidePopupTime = 10f;
         accident.SetActive(true);
-        _session = accident.GetComponent<Session>();
-        _session.SetStartingPosition();
-        
+        GetSession = accident.GetComponent<Session>();
+        GetSession.SetStartingPosition();
+
         SetPopUp("Accident");
         ProcessingSession();
     }
@@ -194,10 +210,10 @@ public class SessionManager : MonoBehaviour
     {
         hidePopupTime = 5f;
         quiz.SetActive(true);
-        _session = quiz.GetComponent<Session>();
-        _session.SetStartingPosition();
-        
-        if (!_session.isDone)
+        GetSession = quiz.GetComponent<Session>();
+        GetSession.SetStartingPosition();
+
+        if (!GetSession.isDone)
         {
             quizMenu.SetActive(true);
             _quizSet.InitialQuiz();
@@ -206,59 +222,52 @@ public class SessionManager : MonoBehaviour
         SetPopUp("Quiz");
         ProcessingSession();
     }
-    
+
     public void QuizDone()
     {
         ShowEnding();
-        
+
         quiz.SetActive(false);
         quizMenu.SetActive(false);
     }
-    
+
     private void ShowEnding()
     {
         ending.SetActive(true);
-        _session = ending.GetComponent<Session>();
-        _session.SetStartingPosition();
-        
+        GetSession = ending.GetComponent<Session>();
+        GetSession.SetStartingPosition();
+
         ProcessingSession();
     }
 
     private void ProcessingSession()
     {
-        // activeInteraction = !(_session.isAnim || _session.isPopup);
-        
-        popupText.text = _session.text;
-        
-        if (_session.isAnim)
-        {
-            playableDirector = _session.GetComponent<PlayableDirector>();
-            // _session.GetDirector();
-            // playableDirector.stopped += OnPlayableDirectorStopped;
-        }
+        popupText.text = GetSession.text;
+
+        if (GetSession.isAnim) playableDirector = GetSession.GetComponent<PlayableDirector>();
 
         FadeWhite();
-        
-        if (_session.isPopup)
+
+        if (GetSession.isPopup)
         {
-            _audioSource = _session.GetComponent<AudioSource>();
-            
+            _audioSource = GetSession.GetComponent<AudioSource>();
+
             Invoke(nameof(DelayPopUp), 1f);
             if (_audioSource.clip != null) hidePopupTime = _audioSource.clip.length + 2f;
-            
-           Invoke(nameof(HidePopUp), hidePopupTime);
+
+            Invoke(nameof(HidePopUp), hidePopupTime);
         }
         else
         {
-            if (_session.isAnim && _session.startAnim)
+            if (GetSession.isAnim && GetSession.startAnim)
             {
                 Invoke(nameof(PlayAnimation), startDelayTime);
             }
             else
             {
-                if (_session.goToAccident) SessionCurruptToAccident();
-                if (!_session.isDone) return;
-                switch (_session.gameObject.name.ToLower())
+                if (GetSession.goToAccident) SessionCurruptToAccident();
+                if (!GetSession.isDone) return;
+                switch (GetSession.gameObject.name.ToLower())
                 {
                     case "intro":
                         IntroDone();
@@ -291,7 +300,7 @@ public class SessionManager : MonoBehaviour
         switch (sessionName.ToLower())
         {
             case "intro":
-                introPopup.SetActive(_session.isPopup);
+                introPopup.SetActive(GetSession.isPopup);
                 sessionPopup.SetActive(false);
                 accidentPopup.SetActive(false);
                 popup = introPopup;
@@ -299,7 +308,7 @@ public class SessionManager : MonoBehaviour
             case "accident":
                 introPopup.SetActive(false);
                 sessionPopup.SetActive(false);
-                accidentPopup.SetActive(_session.isPopup);
+                accidentPopup.SetActive(GetSession.isPopup);
                 popup = accidentPopup;
                 // activeInteraction = true;
                 break;
@@ -307,13 +316,13 @@ public class SessionManager : MonoBehaviour
                 // 인터렉션 활성화
                 introPopup.SetActive(false);
                 // if (sessionName.Contains("session")) popupText.text = _session.text;
-                sessionPopup.SetActive(_session.isPopup);
+                sessionPopup.SetActive(GetSession.isPopup);
                 accidentPopup.SetActive(false);
                 popup = sessionPopup;
                 // activeInteraction = true;
                 break;
         }
-        
+
         // Invoke(nameof(PlayAudioPopUp), 2f);
     }
 
@@ -325,18 +334,17 @@ public class SessionManager : MonoBehaviour
     private void HidePopUp()
     {
         popup.SetActive(false);
-        
-        if (_session.isAnim && _session.startAnim)
+
+        if (GetSession.isAnim && GetSession.startAnim)
         {
             Invoke(nameof(PlayAnimation), startDelayTime);
             // activeInteraction = true;
         }
         else
         {
-            if (_session.goToAccident) SessionCurruptToAccident();
+            if (GetSession.goToAccident) SessionCurruptToAccident();
             else
-            {
-                switch (_session.gameObject.name.ToLower())
+                switch (GetSession.gameObject.name.ToLower())
                 {
                     case "intro":
                         startPopup.SetActive(true);
@@ -349,46 +357,30 @@ public class SessionManager : MonoBehaviour
                         StartCoroutine(EndingProcess());
                         break;
                     default:
-                        if (_session.nextSession) SessionDone();
+                        if (GetSession.nextSession) SessionDone();
                         break;
                 }
-            }
         }
     }
 
-    public void PlayAnimation() => playableDirector.Play();
-    public void StopAnimation() => playableDirector.Stop();
-    public void PauseAnimation() => playableDirector.Pause();
-    public void ResumeAnimation() => playableDirector.Resume();
-
-    private void OnPlayableDirectorStopped(PlayableDirector aDirector)
+    public void PlayAnimation()
     {
-        if (playableDirector == aDirector)
-            Debug.Log("PlayableDirector named " + aDirector.name + " is now stopped.");
-        
-        // 인터렉션 활성화
-        // activeInteraction = true;
-        
-        playableDirector.stopped -= OnPlayableDirectorStopped;
-        
-        // 체험이 있으면 애니 종료후 대기함
-        // if (_session.isExp) return;
-        
-        switch (_session.gameObject.name)
-        {
-            case "Intro":
-                IntroDone();
-                return;
-            case "Accident":
-                AccidentDone();
-                return;
-            case "Quiz":
-                QuizDone();
-                return;
-            default:
-                SessionDone();
-                return;
-        }
+        playableDirector.Play();
+    }
+
+    public void StopAnimation()
+    {
+        playableDirector.Stop();
+    }
+
+    public void PauseAnimation()
+    {
+        playableDirector.Pause();
+    }
+
+    public void ResumeAnimation()
+    {
+        playableDirector.Resume();
     }
 
     private IEnumerator EndingProcess()
@@ -403,26 +395,22 @@ public class SessionManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         FadeBlack();
-        
+
         yield return new WaitForSeconds(2f);
-        
-#if UNITY_ANDROID
-        _questToHome.BackButtonToHome();
-#else
-        _viveToHome.BackButtonToHome();
-#endif
+
+// #if UNITY_ANDROID
+//         _questToHome.BackButtonToHome();
+// #else
+//         _viveToHome.BackButtonToHome();
+// #endif
     }
-    
-    // [SerializeField] private Transform moveTarget;
-    private const float Duration = 6f;
-    private string _doneSessionName;
-    
+
     public void PlayerMove(string mDoneSessionName)
     {
-        var moveTarget = _session.transform.position;
+        var moveTarget = GetSession.transform.position;
         _doneSessionName = mDoneSessionName;
         playerOrigin.DOMove(moveTarget, Duration, true);
-        
+
         Invoke(nameof(ExcuteSessionDone), Duration + 1f);
     }
 
@@ -455,7 +443,7 @@ public class SessionManager : MonoBehaviour
         _viveToHome.CameraToWhite();
 #endif
     }
-    
+
     public void FadeBlack()
     {
 #if UNITY_ANDROID
