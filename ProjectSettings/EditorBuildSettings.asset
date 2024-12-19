@@ -30,19 +30,19 @@ EditorBuildSettings:
     path: Assets/Gintotal/Scenes/Quest/ExpQ108.unity
     guid: 25f375bb5141d9a4383cfb655476e66a
   - enabled: 0
-    path: "Assets/Gintotal/Scenes/Quest/\uC2DC\uCCAD\uD615/ExpQ201.unity"
+    path: "Assets/Gintotal/Scenes/Quest/\u1109\u1175\u110E\u1165\u11BC\u1112\u1167\u11BC/ExpQ201.unity"
     guid: b4370fabf55aced4ba30a9e061f6a8ac
   - enabled: 0
-    path: "Assets/Gintotal/Scenes/Quest/\uC2DC\uCCAD\uD615/ExpQ202.unity"
+    path: "Assets/Gintotal/Scenes/Quest/\u1109\u1175\u110E\u1165\u11BC\u1112\u1167\u11BC/ExpQ202.unity"
     guid: 97be8e3204ab59948bebc0712006f61f
   - enabled: 0
-    path: "Assets/Gintotal/Scenes/Quest/\uC2DC\uCCAD\uD615/ExpQ203.unity"
+    path: "Assets/Gintotal/Scenes/Quest/\u1109\u1175\u110E\u1165\u11BC\u1112\u1167\u11BC/ExpQ203.unity"
     guid: f4b4544723093d44483c888f2a84df22
   - enabled: 0
-    path: "Assets/Gintotal/Scenes/Quest/\uC2DC\uCCAD\uD615/ExpQ204.unity"
+    path: "Assets/Gintotal/Scenes/Quest/\u1109\u1175\u110E\u1165\u11BC\u1112\u1167\u11BC/ExpQ204.unity"
     guid: 0718045f38bdb634c83f55ea7e2a4acd
   - enabled: 0
-    path: "Assets/Gintotal/Scenes/Quest/\uC2DC\uCCAD\uD615/ExpQ205.unity"
+    path: "Assets/Gintotal/Scenes/Quest/\u1109\u1175\u110E\u1165\u11BC\u1112\u1167\u11BC/ExpQ205.unity"
     guid: 33879fecec91f1d489f4b46c63198997
   - enabled: 0
     path: Assets/Gintotal/Scenes/Quest/ExpQ401.unity
