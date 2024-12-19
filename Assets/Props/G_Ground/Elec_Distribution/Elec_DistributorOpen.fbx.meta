@@ -3,7 +3,17 @@ guid: a0ed7142bea5f6644874727c0ec60c71
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: elect_shd
+    second: {fileID: 2100000, guid: 183acd4f8188c16408a75480e7a58944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: elect_shd1
+    second: {fileID: 2100000, guid: 64e26684523c93b448e36580c80b42b1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -16,6 +26,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
