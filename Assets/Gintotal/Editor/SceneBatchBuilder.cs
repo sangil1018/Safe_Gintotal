@@ -1,7 +1,7 @@
-using UnityEditor;
-using UnityEngine;
 using System.IO;
+using UnityEditor;
 using UnityEditor.Build.Reporting;
+using UnityEngine;
 
 public class SceneBatchBuilder : MonoBehaviour
 {
@@ -62,17 +62,13 @@ public class SceneBatchBuilder : MonoBehaviour
 
             // 빌드 결과 출력
             if (summary.result == BuildResult.Succeeded)
-            {
                 Debug.Log($"'{sceneName}' 씬 빌드 성공: {buildPath}");
-            }
             else
-            {
                 Debug.LogError($"'{sceneName}' 씬 빌드 실패: {summary.totalErrors} 에러");
-            }
         }
     }
-    
-    [MenuItem("Build/Build Scenes to EXEs")]
+
+    // [MenuItem("Build/Build Scenes to EXEs")]
     public static void EXEBuildScenes()
     {
         // 씬 검색
@@ -126,13 +122,9 @@ public class SceneBatchBuilder : MonoBehaviour
 
             // 빌드 결과 출력
             if (summary.result == BuildResult.Succeeded)
-            {
                 Debug.Log($"'{sceneName}' 씬 빌드 성공: {buildPath}");
-            }
             else
-            {
                 Debug.LogError($"'{sceneName}' 씬 빌드 실패: {summary.totalErrors} 에러");
-            }
         }
     }
 }

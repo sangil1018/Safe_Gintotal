@@ -1,8 +1,8 @@
 using System;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 using DG.Tweening;
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.Application;
 using Debug = UnityEngine.Debug;
@@ -10,27 +10,26 @@ using Debug = UnityEngine.Debug;
 public class QuestToHome : MonoBehaviour
 {
     private const float QuitDelay = 2.0f; // 종료 대기 시간
-    private bool _isAppLaunched;
-    
-    // [SerializeField] public Button toHomeBtn;
-    private CanvasGroup _canvasGroup;
-    private CanvasGroup _accidentGroup;
     private const string SceneName = "home";
+    public CanvasGroup _canvasGroup;
+    public CanvasGroup _accidentGroup;
+    private bool _isAppLaunched;
 
     private Sequence _mySequence;
-    
+
     private void Awake()
     {
         _canvasGroup = GameObject.Find("OverlayFader").GetComponent<CanvasGroup>();
         _accidentGroup = GameObject.Find("AccidentFader").GetComponent<CanvasGroup>();
-#if UNITY_ANDROID
         _canvasGroup.alpha = 1;
         _accidentGroup.alpha = 0;
-#endif
     }
-    
-    private void Start() => runInBackground = true;
-    
+
+    private void Start()
+    {
+        runInBackground = true;
+    }
+
     public void FaderSequence()
     {
         _mySequence = DOTween.Sequence()
@@ -48,12 +47,20 @@ public class QuestToHome : MonoBehaviour
         _canvasGroup.DOFade(1, 0.5f).SetEase(Ease.InCubic); // 시작할때 검->흰 페이드
     }
 
-    public void BackButtonToHome() => LaunchHome();
+    public void CameraBK()
+    {
+        _canvasGroup.alpha = 1f; // 검정화면
+    }
+
+    public void BackButtonToHome()
+    {
+        LaunchHome();
+    }
 
     private void LaunchHome()
     {
         _canvasGroup.DOFade(1, 1f).SetEase(Ease.OutCubic); // 다른앱으로 넘어갈때 희->검 페이드
-        
+
 #if UNITY_EDITOR
         try
         {
@@ -68,7 +75,7 @@ public class QuestToHome : MonoBehaviour
         LaunchAndroidApp(apkName.ToLower());
 #endif
     }
-    
+
     private static void LaunchAndroidApp(string packageName)
     {
         try
@@ -96,7 +103,7 @@ public class QuestToHome : MonoBehaviour
             Debug.LogError("앱 실행 중 오류 발생: " + e.Message);
         }
     }
-    
+
     private static async UniTaskVoid QuitApp()
     {
 #if UNITY_EDITOR

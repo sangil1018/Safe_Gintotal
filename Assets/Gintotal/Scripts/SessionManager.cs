@@ -8,7 +8,6 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class SessionManager : MonoBehaviour
 {
-    // [SerializeField] private Transform moveTarget;
     private const float Duration = 6f;
     private static SessionManager _instance;
     [SerializeField] private GameObject intro;
@@ -16,14 +15,6 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private GameObject accident;
     [SerializeField] private GameObject quiz;
     [SerializeField] private GameObject ending;
-    [SerializeField] private GameObject popup;
-    [SerializeField] private GameObject introPopup;
-    [SerializeField] private GameObject startPopup;
-    [SerializeField] private GameObject sessionPopup;
-    [SerializeField] private GameObject accidentPopup;
-    [SerializeField] private GameObject backPopup;
-    [SerializeField] private TMP_Text popupText;
-    [SerializeField] private GameObject quizMenu;
     [SerializeField] private float startDelayTime = 1f;
     [SerializeField] private float hidePopupTime = 10f;
 
@@ -41,45 +32,50 @@ public class SessionManager : MonoBehaviour
     private string _doneSessionName;
     private InputActionManager _inputActionManager;
     private bool _isPlaying;
-    private QuestToHome _questToHome;
+    private PlayerController _playerController;
 
-    // private bool _isIntroDone;
+    private QuestToHome _questToHome;
     private QuizSet _quizSet;
 
     private GameObject _uiManager;
     private ViveToHome _viveToHome;
+    private GameObject accidentPopup;
+    private GameObject backPopup;
+    private GameObject introPopup;
+    private GameObject popup;
+    private TMP_Text popupText;
+    private GameObject quizMenu;
+    private GameObject sessionPopup;
+    private GameObject startPopup;
     public Session GetSession { get; private set; }
 
     public string GETSessionName => GetSession.gameObject.name;
 
     public static SessionManager Instance => null == _instance ? null : _instance;
 
+    public bool teleportEndSession { private get; set; }
+
     private void Awake()
     {
         _instance = this;
-        // if (null == _instance)
-        // {
-        //     _instance = this;
-        //     DontDestroyOnLoad((gameObject));
-        // }
-        // else
-        // {
-        //     Destroy(gameObject);
-        // }
 
+        var uiGroup = GameObject.Find("UI Group");
+        introPopup = uiGroup.transform.GetChild(0).gameObject;
+        startPopup = uiGroup.transform.GetChild(1).gameObject;
+        sessionPopup = uiGroup.transform.GetChild(2).gameObject;
+        accidentPopup = uiGroup.transform.GetChild(3).gameObject;
+        backPopup = uiGroup.transform.GetChild(4).gameObject;
+        quizMenu = uiGroup.transform.GetChild(5).gameObject;
+        popup = introPopup;
+        popupText = sessionPopup.GetComponentInChildren<TMP_Text>();
         _uiManager = GameObject.Find("UI Manager");
-
         popup.SetActive(false);
 
         _quizSet = quiz.GetComponent<QuizSet>();
-
         _inputActionManager = GetComponent<InputActionManager>();
-
-#if UNITY_ANDROID
         _questToHome = _uiManager.GetComponent<QuestToHome>();
-#else
-        _viveToHome = _uiManager.GetComponent<ViveToHome>();
-#endif
+        // _questToHome.CameraBK(); // 화면 검게 만들어주기
+        _playerController = playerOrigin.GetComponent<PlayerController>();
     }
 
     private void Start()
@@ -91,14 +87,14 @@ public class SessionManager : MonoBehaviour
                 break;
             default:
                 FindChildSessions();
-                ShowIntro();
                 break;
         }
     }
 
     private void Update()
     {
-        _isPlaying = playableDirector != null ? playableDirector.state == PlayState.Playing : false;
+        _isPlaying = playableDirector != null && playableDirector.state == PlayState.Playing;
+        if (GetSession.emergency) _isPlaying = false;
         interaction.SetActive(!activeInteraction && !popup.activeSelf && !startPopup.activeSelf &&
                               !backPopup.activeSelf && !_isPlaying);
         leftController.SetActive(!activeInteraction && !GetSession.leftCon && !popup.activeSelf &&
@@ -126,19 +122,14 @@ public class SessionManager : MonoBehaviour
 
         sessions = objs.ToArray();
         currentSessionID = 0;
-    }
 
-    public void ShowBackUI(bool show)
-    {
-        backPopup.SetActive(show);
+        ShowIntro();
     }
 
     private void ShowIntro()
     {
         intro.SetActive(true);
         GetSession = intro.GetComponent<Session>();
-        GetSession.SetStartingPosition();
-        // _session.RefreshControllers();
 
         SetPopUp("Intro");
         ProcessingSession();
@@ -147,6 +138,11 @@ public class SessionManager : MonoBehaviour
     public void IntroDone()
     {
         FadeBlack();
+        Invoke(nameof(IntroDoneWait), 1);
+    }
+
+    private void IntroDoneWait()
+    {
         intro.SetActive(false);
         ShowSession();
     }
@@ -155,7 +151,6 @@ public class SessionManager : MonoBehaviour
     {
         sessions[currentSessionID].SetActive(true);
         GetSession = sessions[currentSessionID].GetComponent<Session>();
-        GetSession.SetStartingPosition();
 
         SetPopUp();
         ProcessingSession();
@@ -169,7 +164,11 @@ public class SessionManager : MonoBehaviour
     public void SessionDone()
     {
         FadeBlack();
+        Invoke(nameof(SessionDoneWait), 1);
+    }
 
+    private void SessionDoneWait()
+    {
         sessions[currentSessionID].SetActive(false);
         currentSessionID += 1;
 
@@ -180,10 +179,13 @@ public class SessionManager : MonoBehaviour
     public void SessionCurruptToAccident()
     {
         FadeBlack();
+        Invoke(nameof(SessionCurruptWait), 1);
+    }
 
+    private void SessionCurruptWait()
+    {
         sessions[currentSessionID].SetActive(false);
         currentSessionID += 1;
-
         ShowAccident();
     }
 
@@ -192,7 +194,6 @@ public class SessionManager : MonoBehaviour
         hidePopupTime = 10f;
         accident.SetActive(true);
         GetSession = accident.GetComponent<Session>();
-        GetSession.SetStartingPosition();
 
         SetPopUp("Accident");
         ProcessingSession();
@@ -201,9 +202,14 @@ public class SessionManager : MonoBehaviour
     public void AccidentDone()
     {
         FadeBlack();
+        Invoke(nameof(AccidentDoneWait), 1);
+        // ShowQuiz();
+    }
+
+    private void AccidentDoneWait()
+    {
         accident.SetActive(false);
         Invoke(nameof(ShowQuiz), startDelayTime);
-        // ShowQuiz();
     }
 
     public void ShowQuiz()
@@ -211,7 +217,6 @@ public class SessionManager : MonoBehaviour
         hidePopupTime = 5f;
         quiz.SetActive(true);
         GetSession = quiz.GetComponent<Session>();
-        GetSession.SetStartingPosition();
 
         if (!GetSession.isDone)
         {
@@ -225,19 +230,19 @@ public class SessionManager : MonoBehaviour
 
     public void QuizDone()
     {
-        ShowEnding();
-
-        quiz.SetActive(false);
-        quizMenu.SetActive(false);
+        FadeBlack();
+        Invoke(nameof(ShowEnding), 1);
     }
 
     private void ShowEnding()
     {
         ending.SetActive(true);
         GetSession = ending.GetComponent<Session>();
-        GetSession.SetStartingPosition();
 
         ProcessingSession();
+
+        quiz.SetActive(false);
+        quizMenu.SetActive(false);
     }
 
     private void ProcessingSession()
@@ -289,6 +294,33 @@ public class SessionManager : MonoBehaviour
         }
     }
 
+    public void ReCenterPlayer()
+    {
+        if (!GetSession.isStartPosition) return;
+        _playerController.resetTransform = GetSession.transform;
+        _playerController.ResetPosition();
+    }
+
+    public void ReCenterPlayer(Transform target)
+    {
+        StartCoroutine(nameof(RecenterSequence), target);
+    }
+
+    private IEnumerator RecenterSequence(Transform target)
+    {
+        _playerController.resetTransform = target;
+
+        FadeBlack();
+        yield return new WaitForSeconds(1);
+
+        _playerController.ResetPosition();
+
+        yield return null;
+
+        FadeWhite();
+        yield return new WaitForSeconds(1);
+    }
+
     private void DelayPopUp()
     {
         popup.SetActive(true);
@@ -310,20 +342,15 @@ public class SessionManager : MonoBehaviour
                 sessionPopup.SetActive(false);
                 accidentPopup.SetActive(GetSession.isPopup);
                 popup = accidentPopup;
-                // activeInteraction = true;
                 break;
             default:
                 // 인터렉션 활성화
                 introPopup.SetActive(false);
-                // if (sessionName.Contains("session")) popupText.text = _session.text;
                 sessionPopup.SetActive(GetSession.isPopup);
                 accidentPopup.SetActive(false);
                 popup = sessionPopup;
-                // activeInteraction = true;
                 break;
         }
-
-        // Invoke(nameof(PlayAudioPopUp), 2f);
     }
 
     private void PlayAudioPopUp()
@@ -385,24 +412,21 @@ public class SessionManager : MonoBehaviour
 
     private IEnumerator EndingProcess()
     {
-#if UNITY_ANDROID
+        // yield return new WaitForSeconds(0.5f);
 
-#else
-        yield return new WaitForSeconds(2f);
-        
-        ShowBackUI(true);
-#endif
-        yield return new WaitForSeconds(3f);
+        backPopup.SetActive(true);
+        yield return new WaitForSeconds(3.5f);
 
         FadeBlack();
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
-// #if UNITY_ANDROID
-//         _questToHome.BackButtonToHome();
-// #else
-//         _viveToHome.BackButtonToHome();
-// #endif
+        _questToHome.BackButtonToHome();
+    }
+
+    public void GoToHome()
+    {
+        _questToHome.BackButtonToHome();
     }
 
     public void PlayerMove(string mDoneSessionName)
@@ -412,6 +436,21 @@ public class SessionManager : MonoBehaviour
         playerOrigin.DOMove(moveTarget, Duration, true);
 
         Invoke(nameof(ExcuteSessionDone), Duration + 1f);
+    }
+
+    public void CameraMove(Transform target)
+    {
+        const float duration = 2f;
+        playerOrigin.DOMove(target.position, duration, true);
+    }
+
+    public void Teleport(Transform target)
+    {
+        const float duration = 3.5f;
+        playerOrigin.DOMove(target.position, duration, true);
+
+        if (!teleportEndSession) return;
+        Invoke(nameof(SessionDone), duration + 0.1f);
     }
 
     private void ExcuteSessionDone()
@@ -437,28 +476,16 @@ public class SessionManager : MonoBehaviour
 
     public void FadeWhite()
     {
-#if UNITY_ANDROID
         _questToHome.CameraToWhite();
-#else
-        _viveToHome.CameraToWhite();
-#endif
     }
 
     public void FadeBlack()
     {
-#if UNITY_ANDROID
         _questToHome.CameraToBlack();
-#else
-        _viveToHome.CameraToBlack();
-#endif
     }
 
     public void AccidentHappen()
     {
-#if UNITY_ANDROID
         _questToHome.FaderSequence();
-#else
-        _viveToHome.FaderSequence();
-#endif
     }
 }
